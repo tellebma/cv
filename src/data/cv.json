@@ -1,0 +1,463 @@
+{
+    "basics": {
+      "name": "Maxime BELLET",
+      "headline": "Ingénieur DevSecOps SRE",
+      "email": "maxime.bllt@icloud.com",
+      "phone": "+337 82 01 86 95",
+      "location": "Lyon et périphérie",
+      "url": {
+        "label": "",
+        "href": ""
+      },
+      "customFields": [
+        {
+          "id": "f5op3exo1xzzuu8619eljsf3",
+          "icon": "car",
+          "name": "",
+          "value": "Permis B"
+        }
+      ],
+      "picture": {
+        "url": "https://media.licdn.com/dms/image/v2/C4D03AQGiBb4yVTGtbg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1646833829845?e=1750291200&v=beta&t=Rwu5DEXwZwCYfdvWTroN6ajYUQ_bhInshNpV5Gf6WYY",
+        "size": 130,
+        "aspectRatio": 1,
+        "borderRadius": 9999,
+        "effects": {
+          "hidden": false,
+          "border": false,
+          "grayscale": false
+        }
+      }
+    },
+    "sections": {
+      "summary": {
+        "name": "",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "summary",
+        "content": "<p>Ingénieur diplômé de CPE Lyon en Informatique et Réseaux de Communication, spécialisé en Réseaux et DevOps. J’ai développé une solide expertise technique en développement logiciel puis en DevOps lors de mes 5 années d’alternance chez Orange, avant d’intégrer Thales Services en tant qu’intégrateur applicatif DevSecOps et SRE sur une mission chez EDF.</p>"
+      },
+      "awards": {
+        "name": "Awards",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "awards",
+        "items": []
+      },
+      "certifications": {
+        "name": "Cértifications",
+        "columns": 1,
+        "separateLinks": false,
+        "visible": true,
+        "id": "certifications",
+        "items": [
+          {
+            "id": "ah9dbl7c0nyvw14qwilipyaw",
+            "visible": true,
+            "name": "AWS Certifications",
+            "issuer": "Amazon Web Services",
+            "date": "A venir (courant 2025)",
+            "summary": "<p>Certification Cloud AWS </p>",
+            "url": {
+              "label": "AWS Amazon",
+              "href": "https://aws.amazon.com/"
+            }
+          },
+          {
+            "id": "qmfvai2pv78973en18i56ft4",
+            "visible": true,
+            "name": "Cambridge CAE",
+            "issuer": "Cambridge University Press & Assessment",
+            "date": "Décembre 2022",
+            "summary": "<p>Certification B2 Anglais</p>",
+            "url": {
+              "label": "Cambridge English",
+              "href": "https://www.cambridgeenglish.org/"
+            }
+          },
+          {
+            "id": "b3d7ywvk27wqw3rn2sf91exm",
+            "visible": true,
+            "name": "Test of English for International Communication",
+            "issuer": "ETS EMEA",
+            "date": "Fev 2020 - Fev 2022",
+            "summary": "<p>795/990</p>",
+            "url": {
+              "label": "ETS Global",
+              "href": "https://www.etsglobal.org/fr/fr"
+            }
+          },
+          {
+            "id": "fqw5f1ejve7pppez5slxjruj",
+            "visible": true,
+            "name": "Cisco Certified Network Associate Security (CCNA)",
+            "issuer": "Cisco NetAcad",
+            "date": "Juin 2019",
+            "summary": "<p>Certification Réseau</p>",
+            "url": {
+              "label": "NetAcad",
+              "href": "https://www.netacad.com/fr/courses/ccna-switching-routing-wireless-essentials?courseLang=en-US"
+            }
+          }
+        ]
+      },
+      "education": {
+        "name": "Diplômes et Formations",
+        "columns": 1,
+        "separateLinks": false,
+        "visible": true,
+        "id": "education",
+        "items": [
+          {
+            "id": "cwe6a0b77m665tt65eq7cy47",
+            "visible": true,
+            "institution": "CPE Lyon",
+            "studyType": "Diplôme d'Ingénieur",
+            "area": "Informatique et Réseaux de Communication",
+            "score": "",
+            "date": "2020 - 2023",
+            "summary": "<p><strong>Majeur Infrastructure et Sécurité des Réseaux et des Objets Communicants</strong></p><p>Réseaux &amp; Cloud: Architectures cloud (AWS, Azure), virtualisation, sécurité réseaux.</p><p>DevOps &amp; Conteneurisation: Docker, Kubernetes, automatisation CI/CD (GitLab).</p><p>Sécurité &amp; IoT: Sécurité avancée, objets connectés, traitement numérique du signal.</p><p>Développement: Programmation orientée objet (C, Java, Python), web dynamique (Twig, Symfony), bases de données.</p>",
+            "url": {
+              "label": "CPE IRC",
+              "href": "https://www.cpe.fr/formation-numerique/ingenieur-informatique-reseaux/"
+            }
+          },
+          {
+            "id": "k7qsf9hff6xe3xgrd51jwvwn",
+            "visible": true,
+            "institution": "IUT Annecy",
+            "studyType": "DUT ",
+            "area": "Réseaux Informatiques et Telecomunications (Alternance)",
+            "score": "",
+            "date": "2018 - 2020",
+            "summary": "<p>Administration réseaux et systèmes (Linux, Windows Server, Active Directory).</p><p>Mise en place et sécurisation d’infrastructures réseau (DHCP, DNS, Web, Virtualisation).</p><p>Télécommunications : installation serveurs téléphoniques, analyse xDSL/fibre optique.</p><p>Développement web (HTML/CSS/PHP/JS), programmation orientée objet (Python), scripting Unix et PowerShell.</p>",
+            "url": {
+              "label": "UNIV IUT R&T",
+              "href": "https://www.univ-smb.fr/iut-annecy/formation/reseaux-informatiques-et-telecoms/"
+            }
+          }
+        ]
+      },
+      "experience": {
+        "name": "Expérience Professionnelle",
+        "columns": 1,
+        "separateLinks": false,
+        "visible": true,
+        "id": "experience",
+        "items": [
+          {
+            "id": "sih434v1tdyimdsf0g4clqt8",
+            "visible": true,
+            "company": "Thales Services (Mission EDF – DPNT/DivNum)",
+            "position": "Intégrateur Applicatif DevSecOps SRE",
+            "location": "Lyon",
+            "date": "Sept 2023 - Maintenant",
+            "summary": "<p>Conception et gestion des pipelines CI/CD sous Jenkins avec automatisation complète (build, tests, déploiement idempotent), analyses de qualité et sécurité (SonarQube, Checkmarx), et implémentation de Quality &amp; Security Gates sur des projets GitFlow et OneFlow.</p><p>Orchestration des déploiements applicatifs sur environnements de recette et production.</p><p>Maintien en conditions opérationnelles (MCO), suivi proactif des environnements, résolution d’incidents et gestion des anomalies complexes.</p><p>Connaissance approfondie des normes, procédures et architectures spécifiques à EDF.</p>",
+            "url": {
+              "label": "Thales Services Numérique",
+              "href": "https://www.thalesgroup.com/fr/marches/defense-et-securite/activites-services-numeriques"
+            }
+          },
+          {
+            "id": "a6eq2v3spr8fc53p88zwija6",
+            "visible": true,
+            "company": "Orange",
+            "position": "Développeur puis Ingénieur DevOps (Alternance)",
+            "location": "Lyon",
+            "date": "2018 - 2023",
+            "summary": "<p>Industrialisation et maintenance d’applications critiques (Python, API, Docker).</p><p>Mise en place de pipelines CI/CD (GitLab CI, SonarQube, Ansible).</p><p>Automatisation de processus techniques (gestion d’alarmes RTC).</p><p>Travail en équipe agile avec cycles de développement itératifs.</p>",
+            "url": {
+              "label": "Orange",
+              "href": "https://www.orange.com/fr"
+            }
+          }
+        ]
+      },
+      "volunteer": {
+        "name": "Volunteering",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "volunteer",
+        "items": []
+      },
+      "interests": {
+        "name": "Interests",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "interests",
+        "items": [
+          {
+            "id": "mrgkfsjofwijftib018vhupb",
+            "visible": true,
+            "name": "Sport",
+            "keywords": [
+              "Vélo",
+              "Course a peid",
+              "Basket ball"
+            ]
+          },
+          {
+            "id": "dsaie9s3lg0wjnwbnp94i6u4",
+            "visible": true,
+            "name": "Jeux de société",
+            "keywords": []
+          }
+        ]
+      },
+      "languages": {
+        "name": "Langues",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "languages",
+        "items": [
+          {
+            "id": "ligo4mff77k57v1fq77cabns",
+            "visible": true,
+            "name": "Anglais",
+            "description": "Niveau C1",
+            "level": 4
+          },
+          {
+            "id": "a9njeoo8lvigoqpeddmvtq1a",
+            "visible": true,
+            "name": "Espagnol",
+            "description": "Niveau B1",
+            "level": 2
+          }
+        ]
+      },
+      "profiles": {
+        "name": "Profiles",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "profiles",
+        "items": [
+          {
+            "id": "odwj3zo0z184gv24i0ra0qhf",
+            "visible": true,
+            "network": "GitHub",
+            "username": "tellebma",
+            "icon": "github",
+            "url": {
+              "label": "",
+              "href": "https://github.com/tellebma"
+            }
+          },
+          {
+            "id": "a5iahzx4ax4qyvhebmsu49e1",
+            "visible": true,
+            "network": "Linkedin",
+            "username": "maxime-bellet",
+            "icon": "linkedin",
+            "url": {
+              "label": "",
+              "href": "https://www.linkedin.com/in/maxime-bellet/"
+            }
+          }
+        ]
+      },
+      "projects": {
+        "name": "Projects",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "projects",
+        "items": []
+      },
+      "publications": {
+        "name": "Publications",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "publications",
+        "items": []
+      },
+      "references": {
+        "name": "References",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "references",
+        "items": [
+          {
+            "id": "oy8gcz9qxllxfo9kzuohxcpi",
+            "visible": true,
+            "name": "TRUCHET Mathieu",
+            "description": "EDF - Pilote de Produit ",
+            "summary": "",
+            "url": {
+              "label": "",
+              "href": ""
+            }
+          },
+          {
+            "id": "jguvi02stthk326df70x032o",
+            "visible": true,
+            "name": "SOLANE Alexandre",
+            "description": "EDF - Intégrateur Application Référent",
+            "summary": "",
+            "url": {
+              "label": "",
+              "href": ""
+            }
+          },
+          {
+            "id": "z598pn8n7elsgjh16odrki9m",
+            "visible": true,
+            "name": "FERARD Stephane",
+            "description": "Thales - Program Manager",
+            "summary": "",
+            "url": {
+              "label": "",
+              "href": ""
+            }
+          }
+        ]
+      },
+      "skills": {
+        "name": "Compétences",
+        "columns": 1,
+        "separateLinks": true,
+        "visible": true,
+        "id": "skills",
+        "items": [
+          {
+            "id": "gvqbl3yzprx3k9rzlh8h0nle",
+            "visible": true,
+            "name": "Outils CI/CD",
+            "description": "",
+            "level": 0,
+            "keywords": [
+              "Jenkins",
+              "Gitlab CI",
+              "Ansible"
+            ]
+          },
+          {
+            "id": "fxak44s71rjsa54nmygxol9f",
+            "visible": true,
+            "name": "Cloud & Virtualisation",
+            "description": "",
+            "level": 0,
+            "keywords": [
+              "AWS",
+              "GCP",
+              "Azure",
+              "Virtualisation (VMware)"
+            ]
+          },
+          {
+            "id": "hb6tye171j38ttvd3s3n8aho",
+            "visible": true,
+            "name": "DevOps & Conteneurisation",
+            "description": "",
+            "level": 0,
+            "keywords": [
+              "Docker",
+              "Kubernetes"
+            ]
+          },
+          {
+            "id": "go917u823nhvwh3wbtcl7tgk",
+            "visible": true,
+            "name": "Environnements OS",
+            "description": "",
+            "level": 0,
+            "keywords": [
+              "Linux/Unix",
+              "Windows Server"
+            ]
+          },
+          {
+            "id": "zdciyz20bqd6dec41vp933sj",
+            "visible": true,
+            "name": "Développement",
+            "description": "",
+            "level": 0,
+            "keywords": [
+              "Python",
+              "Java",
+              "C",
+              "HTML5 CSS JS",
+              "PHP",
+              "SQL",
+              "Shell scripting"
+            ]
+          },
+          {
+            "id": "m4yob3wr84derbvqz9qplvlw",
+            "visible": true,
+            "name": "Méthodologies",
+            "description": "",
+            "level": 0,
+            "keywords": [
+              "Agile / Scrum",
+              "GitFlow / OneFlow"
+            ]
+          }
+        ]
+      },
+      "custom": {}
+    },
+    "metadata": {
+      "template": "ditto",
+      "layout": [
+        [
+          [
+            "summary",
+            "experience",
+            "education",
+            "projects",
+            "volunteer",
+            "references"
+          ],
+          [
+            "profiles",
+            "skills",
+            "interests",
+            "certifications",
+            "awards",
+            "publications",
+            "languages"
+          ]
+        ]
+      ],
+      "css": {
+        "value": "* {\n\t/*outline: 1px solid #000;\n\toutline-offset: 4px;*/\n}\n.mb-2 {\n    color: var(--color-primary);\n    font-size: 1.2rem;\n}\n.p-custom > img {\n    border-width: 10px;\n    border-color: var(--color-primary);\n}",
+        "visible": true
+      },
+      "page": {
+        "margin": 10,
+        "format": "a4",
+        "options": {
+          "breakLine": true,
+          "pageNumbers": true
+        }
+      },
+      "theme": {
+        "background": "#ffffff",
+        "text": "#000000",
+        "primary": "#0284c7"
+      },
+      "typography": {
+        "font": {
+          "family": "Asap",
+          "subset": "latin",
+          "variants": [
+            "regular"
+          ],
+          "size": 13.3
+        },
+        "lineHeight": 1.35,
+        "hideIcons": false,
+        "underlineLinks": true
+      },
+      "notes": ""
+    }
+  }
