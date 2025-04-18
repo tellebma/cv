@@ -1,163 +1,165 @@
 ---
-import '../styles/global.css';
 import cv from '../data/cv.json';
+import '../styles/global.css';
 ---
 
-<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <title>{cv.basics.name} - {cv.basics.headline}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/phosphor-icons"></script>
 </head>
 
-<body class="font-sans bg-gray-100 text-gray-900 m-0 p-0">
+<header class="relative max-w-[794px] mx-auto p-8 bg-[var(--color-primary)] text-white rounded-t-lg">
+  <div class="absolute inset-x-0 top-0 h-1/2 w-full bg-[var(--color-primary)]"></div>
+  <div class="p-custom relative grid grid-cols-3 space-x-4 pb-0">
+    <img src={cv.basics.picture.url} alt={`Profil de ${cv.basics.name}`} class="rounded-full w-25 h-25" />
+    <div class="relative z-10 col-span-2 text-background">
+      <div class="space-y-0.5">
+        <h2 class="text-3xl font-bold">{cv.basics.name}</h2>
+        <h2 class="text-xl font-bold">{cv.basics.headline}</h2>
+      </div>
+      <div class="col-span-2 col-start-2 mt-10 text-foreground">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm">
+          <div class="flex items-center gap-x-1.5">
+            <i class="ph ph-bold ph-map-pin text-primary"></i>
+            <div>{cv.basics.location}</div>
+          </div>
+          <div class="flex items-center gap-x-1.5">
+            <i class="ph ph-bold ph-phone text-primary"></i>
+            <div><a href={`tel:${cv.basics.phone}`} class="hover:underline">{cv.basics.phone}</a></div>
+          </div>
+          <div class="flex items-center gap-x-1.5">
+            <i class="ph ph-bold ph-envelope text-primary"></i>
+            <div><a href={`mailto:${cv.basics.email}`} class="hover:underline">{cv.basics.email}</a></div>
+          </div>
+          {cv.basics.customFields.map(field => (
+            <div class="flex items-center gap-x-1.5">
+              <i class={`ph ph-bold ph-${field.icon} text-primary`}></i>
+              <div>{field.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
   
-  <!-- Bandeau Header -->
-  <header class="bg-[{cv.metadata.theme.primary}] text-white p-8 flex items-center relative">
-    <img src={cv.basics.picture.url} alt="Photo de profil" class="rounded-full w-32 h-32 mr-6" />
-    <div>
-      <h1 class="text-4xl font-bold m-0">{cv.basics.name}</h1>
-      <h2 class="text-2xl font-light m-0">{cv.basics.headline}</h2>
-      <p class="mt-2">
-        📍 {cv.basics.location} | 📞 {cv.basics.phone} | ✉️ {cv.basics.email}
-      </p>
-    </div>
+</header>
 
-    <div class="flex items-center ml-auto space-x-4">
-      <button 
-        class="ml-auto bg-white text-black dark:bg-gray-700 dark:text-white py-2 px-4 rounded shadow hover:bg-gray-200 dark:hover:bg-gray-600 transition"
-        onClick={() => document.body.classList.toggle('dark')}
-      >
-        🌗 Mode
-      </button>
-      <a 
-        href="/src/data/cv.pdf" 
-        target="_blank" 
-        class="bg-white text-black py-2 px-4 rounded shadow hover:bg-gray-200 transition"
-      >
-        📄 Télécharger CV
-      </a>
-    </div>
-  </header>
-
-  <main class="flex flex-col md:flex-row max-w-6xl mx-auto py-8 px-4 gap-8">
-    
-    <!-- Colonne de gauche -->
-    <aside class="w-full md:w-1/3 space-y-8">
-      
-      <!-- Profils -->
-      <section>
-        <h3 class="text-2xl font-semibold mb-2">Profils</h3>
-        <ul class="space-y-1">
-          {cv.sections.profiles.items.map(profile => (
-            <li>
-              <a href={profile.url.href} target="_blank" class="text-blue-600 hover:underline">
-                {profile.network}: {profile.username}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <!-- Compétences -->
-      <section>
-        <h3 class="text-xl font-semibold mb-2">Compétences</h3>
-        {cv.sections.skills.items.map(skill => (
-          <div class="mb-4">
-            <strong>{skill.name}</strong>
-            <ul class="list-disc list-inside text-sm ml-4">
-              {skill.keywords.map(keyword => (
-                <li>{keyword}</li>
-              ))}
-            </ul>
-          </div>
+<main class="bg-white rounded shadow max-w-[794px] mx-auto p-8 grid grid-cols-3 gap-8">
+  <aside class="sidebar p-custom group space-y-4">
+    <section id="profiles" class="section">
+      <h3 class="section-title">Profils</h3>
+      <ul class="space-y-2">
+        {cv.sections.profiles.items.map(profile => (
+          <li class="flex items-center gap-2">
+            <i class={`ph ph-bold ph-${profile.icon} text-xl`}></i>
+            <a href={profile.url.href} target="_blank" class="hover:underline">
+              {profile.username}
+            </a>
+          </li>
         ))}
-      </section>
-
-      <!-- Centres d'intérêt -->
-      <section>
-        <h3 class="text-xl font-semibold mb-2">Centres d'intérêt</h3>
-        <ul class="space-y-1">
-          {cv.sections.interests.items.map(interest => (
-            <li>
-              {interest.name}
-              {interest.keywords.length > 0 && (
-                <ul class="list-disc list-inside text-sm ml-4">
-                  {interest.keywords.map(k => (<li>{k}</li>))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <!-- Certifications -->
-      <section>
-        <h3 class="text-xl font-semibold mb-2">Certifications</h3>
-        {cv.sections.certifications.items.map(certif => (
-          <div class="mb-4">
-            <strong>{certif.name}</strong> — {certif.issuer}<br/>
-            <small class="text-gray-500">{certif.date}</small>
-          </div>
-        ))}
-      </section>
-    
-    </aside>
-
-    <!-- Colonne de droite -->
-    <section class="w-full md:w-2/3 space-y-12">
-      
-      <!-- Résumé -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">À propos</h2>
-        <div class="text-sm" set:html={cv.sections.summary.content}></div>
-      </section>
-
-      <!-- Expérience professionnelle -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Expérience professionnelle</h2>
-        {cv.sections.experience.items.map(exp => (
-          <div class="mb-8">
-            <h3 class="text-xl font-semibold">{exp.position} — {exp.company}</h3>
-            <p class="text-sm text-gray-500"><em>{exp.date} | {exp.location}</em></p>
-            <div class="text-sm mt-2" set:html={exp.summary}></div>
-          </div>
-        ))}
-      </section>
-
-      <!-- Diplômes -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Diplômes et formations</h2>
-        {cv.sections.education.items.map(edu => (
-          <div class="mb-8">
-            <h3 class="text-xl font-semibold">{edu.institution}</h3>
-            <p class="text-sm text-gray-500"><em>{edu.studyType} — {edu.area} ({edu.date})</em></p>
-            <div class="text-sm mt-2" set:html={edu.summary}></div>
-          </div>
-        ))}
-      </section>
-
-      <!-- Langues -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Langues</h2>
-        <ul class="list-disc list-inside text-sm ml-4 space-y-1">
-          {cv.sections.languages.items.map(lang => (
-            <li>{lang.name} — {lang.description}</li>
-          ))}
-        </ul>
-      </section>
-
-      <!-- Références -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Références</h2>
-        {cv.sections.references.items.map(ref => (
-          <p class="text-sm"><strong>{ref.name}</strong> — {ref.description}</p>
-        ))}
-      </section>
-
+      </ul>
     </section>
 
-  </main>
+    <section id="skills" class="section">
+      <h3 class="section-title">Compétences</h3>
+      <div class="grid gap-x-6 gap-y-3" style="grid-template-columns: repeat(1, 1fr);">
+        {cv.sections.skills.items.map(skill => (
+          <div class="relative space-y-2 pl-4 group-[.sidebar]:pl-0">
+            <strong class="font-bold">{skill.name}</strong>
+            <p class="pl-8 text-sm">{skill.keywords.join(', ')}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-</body>
-</html>
+    <section id="interests" class="section">
+      <h3 class="section-title">Centres d'intérêt</h3>
+      <div class="grid gap-x-6 gap-y-3" style="grid-template-columns: repeat(1, 1fr);">
+        {cv.sections.interests.items.map(interest => (
+          <div class="relative space-y-2 pl-4 group-[.sidebar]:pl-0">
+            <strong class="font-bold">{interest.name}</strong>
+            <p class="pl-8 text-sm">{interest.keywords.join(', ')}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="certifications" class="section">
+      <h3 class="section-title">Certifications</h3>
+      {cv.sections.certifications.items.map(certif => (
+        <div class="list-disc list-inside text-sm ml-4 space-y-1">
+          <strong>{certif.name}</strong> — {certif.issuer}<br/>
+          <small class="text-gray-500">{certif.date}</small>
+        </div>
+      ))}
+    </section>
+
+    <section id="languages" class="section">
+      <h2 class="section-title">Langues</h2>
+        {cv.sections.languages.items.map(lang => (
+          <div class="list-disc list-inside text-sm ml-4 space-y-1">
+            <p><strong>{lang.name}</strong> — {lang.description}</p>
+          </div>
+        ))}
+    </section>
+
+  </aside>
+
+  <section class="main p-custom group space-y-4 col-span-2">
+    <section id="summary" class="section w-full max-w-2xl">
+      <h2 class="section-title">À propos</h2>
+      <div class="text-sm" set:html={cv.sections.summary.content}></div>
+    </section>
+
+    <section id="experience" class="section w-full max-w-2xl">
+      <h2 class="section-title">Expérience professionnelle</h2>
+      {cv.sections.experience.items.map(exp => (
+        <div class="mb-8">
+          <h3 class="text-xl font-semibold">{exp.position} — {exp.company}</h3>
+          <p class="text-sm text-gray-500"><em>{exp.date} | {exp.location}</em></p>
+          <div class="text-sm mt-2" set:html={exp.summary}></div>
+        </div>
+      ))}
+    </section>
+
+    <section id="education" class="section w-full max-w-2xl">
+      <h2 class="section-title">Diplômes et formations</h2>
+      {cv.sections.education.items.map(edu => (
+        <div class="mb-8">
+          <h3 class="text-xl font-semibold">{edu.institution}</h3>
+          <p class="text-sm text-gray-500"><em>{edu.studyType} — {edu.area} ({edu.date})</em></p>
+          <div class="text-sm mt-2" set:html={edu.summary}></div>
+        </div>
+      ))}
+    </section>
+
+    
+
+    <section id="references" class="section w-full max-w-2xl">
+      <h2 class="section-title">Références</h2>
+      {cv.sections.references.items.map(ref => (
+        <p class="text-sm"><strong>{ref.name}</strong> — {ref.description}</p>
+      ))}
+    </section>
+  </section>
+</main>
+
+<footer>
+  <div class="ml-auto flex flex-col md:flex-row gap-2">
+    <button
+      class="bg-white text-black dark:bg-gray-700 dark:text-white py-2 px-4 rounded shadow hover:bg-gray-200 dark:hover:bg-gray-600 transition"
+      onclick="document.body.classList.toggle('dark')"
+    >
+      🌗 Mode
+    </button>
+    <a
+      href="/cv.pdf"
+      target="_blank"
+      class="bg-white text-black py-2 px-4 rounded shadow hover:bg-gray-200 transition"
+    >
+      📄 Télécharger CV
+    </a>
+  </div>
+</footer>

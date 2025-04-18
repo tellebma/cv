@@ -2,28 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Styles globaux personnalisés */
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #f3f4f6; /* bg-gray-100 */
-  color: #111827; /* text-gray-900 */
+/* Variables globales pour clair */
+@layer base {
+  :root {
+    --color-background: #f3f4f6; /* bg-gray-100 */
+    --color-text: #111827;        /* text-gray-900 */
+    --color-primary: #0284c7;      /* Primary bleu (comme ton bandeau) */
+    --color-link: #2563eb;         /* Lien normal */
+    --color-link-hover: #1d4ed8;   /* Lien au survol */
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.3s, text-decoration 0.3s;
+  }
+
+  a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+  }
+
+  .header-icon:hover {
+    color: var(--color-link-hover);
+  }
+  .section-title {
+    color: var(--color-primary);
+  }
+  li {
+    color: var(--color-primary);
+  }
+  
+}
+
+/* Variables globales pour dark mode */
+@layer base {
+  body.dark {
+    --color-background: #111827; /* bg-gray-900 */
+    --color-text: #f3f4f6;        /* text-gray-100 */
+    --color-primary: #b37708;     /* Bleu plus clair en dark */
+    --color-link: #4e2e05;        /* Bleu clair */
+    --color-link-hover: #58452b;  /* Bleu encore plus clair au hover */
+
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+}
+
+/* Styles pour les boutons */
+button, .button {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark mode */
-body.dark {
-  background-color: #111827; /* bg-gray-900 */
-  color: #f3f4f6; /* text-gray-100 */
+button:hover, .button:hover {
+  background-color: var(--color-link-hover);
+  color: white;
 }
 
-/* Liens */
-a {
-  color: #2563eb; /* text-blue-600 */
-  text-decoration: none;
+.pl-8{
+    padding-left: 8px;
 }
 
-a:hover {
-  text-decoration: underline;
+/* Styles pour les sections */
+.section {
+  margin-bottom: 24px;
 }
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.p-custom {
+    padding: 10px;
+}
+
+.ph{
+    color: var(--color-primary);
+    margin-right: 2px;
+}
+
+
+@media print {
+    body {
+      background: white;
+      margin: 0;
+      padding: 0;
+    }
+    header, main, footer {
+      box-shadow: none;
+      background: white;
+    }
+  }
+  

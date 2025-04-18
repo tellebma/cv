@@ -243,7 +243,7 @@
             "visible": true,
             "network": "GitHub",
             "username": "tellebma",
-            "icon": "github",
+            "icon": "github-logo",
             "url": {
               "label": "",
               "href": "https://github.com/tellebma"
@@ -254,7 +254,7 @@
             "visible": true,
             "network": "Linkedin",
             "username": "maxime-bellet",
-            "icon": "linkedin",
+            "icon": "linkedin-logo",
             "url": {
               "label": "",
               "href": "https://www.linkedin.com/in/maxime-bellet/"
@@ -436,8 +436,8 @@
         "margin": 10,
         "format": "a4",
         "options": {
-          "breakLine": true,
-          "pageNumbers": true
+          "breakLine": false,
+          "pageNumbers": false
         }
       },
       "theme": {
