@@ -55,7 +55,7 @@
         "items": [
           {
             "id": "ah9dbl7c0nyvw14qwilipyaw",
-            "visible": true,
+            "visible": false,
             "name": "AWS Certifications",
             "issuer": "Amazon Web Services",
             "date": "A venir (courant 2025)",
@@ -79,7 +79,7 @@
           },
           {
             "id": "b3d7ywvk27wqw3rn2sf91exm",
-            "visible": true,
+            "visible": false,
             "name": "Test of English for International Communication",
             "issuer": "ETS EMEA",
             "date": "Fev 2020 - Fev 2022",
@@ -282,12 +282,12 @@
         "name": "References",
         "columns": 1,
         "separateLinks": true,
-        "visible": true,
+        "visible": false,
         "id": "references",
         "items": [
           {
             "id": "oy8gcz9qxllxfo9kzuohxcpi",
-            "visible": true,
+            "visible": false,
             "name": "ANNO",
             "description": "EDF - Pilote de Produit ",
             "summary": "",
@@ -298,7 +298,7 @@
           },
           {
             "id": "jguvi02stthk326df70x032o",
-            "visible": true,
+            "visible": false,
             "name": "ANNO 2",
             "description": "EDF - Intégrateur Application Référent",
             "summary": "",
@@ -309,7 +309,7 @@
           },
           {
             "id": "z598pn8n7elsgjh16odrki9m",
-            "visible": true,
+            "visible": false,
             "name": "ANNO 3",
             "description": "Thales - Program Manager",
             "summary": "",

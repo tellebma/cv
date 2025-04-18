@@ -1,6 +1,8 @@
 ---
 import cv from '../data/cv.json';
 import '../styles/global.css';
+
+const isVisible = (section) => section?.visible !== false;
 ---
 
 <head>
@@ -13,7 +15,9 @@ import '../styles/global.css';
 <header class="relative max-w-[794px] mx-auto p-8 pb-0 text-white rounded-t-lg">
   <div class="absolute inset-x-0 top-0 h-1/2 w-full bg-[var(--color-primary)]"></div>
   <div class="p-custom relative block sm:grid sm:grid-cols-3 sm:space-x-4 pb-0">
-    <img src={cv.basics.picture.url} alt={`Profil de ${cv.basics.name}`} class="hidden sm:block rounded-full w-50 h-50" />
+    {cv.basics.picture?.url && (
+      <img src={cv.basics.picture.url} alt={`Profil de ${cv.basics.name}`} class="hidden sm:block rounded-full w-50 h-50" />
+    )}
     <div class="relative z-10 sm:col-span-2 text-background h-50">
       <div class="space-y-0.5">
         <h2 class="text-3xl font-bold">{cv.basics.name}</h2>
@@ -21,21 +25,27 @@ import '../styles/global.css';
       </div>
       <div class="sm:col-span-2 sm:col-start-2 mt-10 text-foreground">
         <div class="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-sm" style="color: var(--color-link);">
-          <div class="flex items-center gap-x-1.5">
-            <i class="ph ph-bold ph-map-pin text-primary"></i>
-            <div>{cv.basics.location}</div>
-          </div>
-          <div class="flex items-center gap-x-1.5">
-            <i class="ph ph-bold ph-phone text-primary"></i>
-            <div><a href={`tel:${cv.basics.phone}`} class="hover:underline">{cv.basics.phone}</a></div>
-          </div>
-          <div class="flex items-center gap-x-1.5">
-            <i class="ph ph-bold ph-envelope text-primary"></i>
-            <div><a href={`mailto:${cv.basics.email}`} class="hover:underline">{cv.basics.email}</a></div>
-          </div>
-          {cv.basics.customFields.map(field => (
+          {cv.basics.location && (
             <div class="flex items-center gap-x-1.5">
-              <i class={`ph ph-bold ph-${field.icon} text-primary`}></i>
+              <i class="ph ph-map-pin text-primary"></i>
+              <div>{cv.basics.location}</div>
+            </div>
+          )}
+          {cv.basics.phone && (
+            <div class="flex items-center gap-x-1.5">
+              <i class="ph ph-phone text-primary"></i>
+              <div><a href={`tel:${cv.basics.phone}`} class="hover:underline">{cv.basics.phone}</a></div>
+            </div>
+          )}
+          {cv.basics.email && (
+            <div class="flex items-center gap-x-1.5">
+              <i class="ph ph-envelope text-primary"></i>
+              <div><a href={`mailto:${cv.basics.email}`} class="hover:underline">{cv.basics.email}</a></div>
+            </div>
+          )}
+          {cv.basics.customFields?.map(field => (
+            <div class="flex items-center gap-x-1.5">
+              <i class={`ph ph-${field.icon} text-primary`}></i>
               <div>{field.value}</div>
             </div>
           ))}
@@ -43,132 +53,139 @@ import '../styles/global.css';
       </div>
     </div>
   </div>
-  
-  
 </header>
 
 <main class="rounded shadow max-w-[794px] mx-auto p-8 pt-0 grid grid-cols-1 md:grid-cols-3 gap-8">
+
   <aside class="sidebar p-custom group space-y-4">
-    <section id="profiles" class="section">
-      <h3 class="section-title">Profils</h3>
-      <ul class="space-y-2">
-        {cv.sections.profiles.items.map(profile => (
-          <li class="flex items-center gap-2">
-            <i class={`ph ph-bold ph-${profile.icon} text-xl`}></i>
-            <a href={profile.url.href} target="_blank" class="hover:underline">
-              {profile.username}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
+    {isVisible(cv.sections.profiles) && (
+      <section id="profiles" class="section">
+        <h3 class="section-title">Profils</h3>
+        <ul class="space-y-2">
+          {cv.sections.profiles.items.filter(p => p.visible).map(profile => (
+            <li class="flex items-center gap-2">
+              <i class={`ph ph-${profile.icon} text-xl`}></i>
+              <a href={profile.url.href} target="_blank" class="hover:underline">{profile.username}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
-    <section id="skills" class="section">
-      <h3 class="section-title">Compétences</h3>
-      <div class="grid gap-x-6 gap-y-3" style="grid-template-columns: repeat(1, 1fr);">
-        {cv.sections.skills.items.map(skill => (
-          <div class="relative space-y-2 pl-4 group-[.sidebar]:pl-0">
-            <strong class="font-bold">{skill.name}</strong>
-            <p class="pl-8 text-sm">{skill.keywords.join(', ')}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section id="interests" class="section">
-      <h3 class="section-title">Centres d'intérêt</h3>
-      <div class="grid gap-x-6 gap-y-3" style="grid-template-columns: repeat(1, 1fr);">
-        {cv.sections.interests.items.map(interest => (
-          <div class="relative space-y-2 pl-4 group-[.sidebar]:pl-0">
-            <strong class="font-bold">{interest.name}</strong>
-            <p class="pl-8 text-sm">{interest.keywords.join(', ')}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section id="certifications" class="section">
-      <h3 class="section-title">Certifications</h3>
-      {cv.sections.certifications.items.map(certif => (
-        <div class="list-disc list-inside text-sm ml-4 space-y-1">
-          <strong>{certif.name}</strong> — {certif.issuer}<br/>
-          <small class="text-gray-500">{certif.date}</small>
+    {isVisible(cv.sections.skills) && (
+      <section id="skills" class="section">
+        <h3 class="section-title">Compétences</h3>
+        <div class="grid gap-x-6 gap-y-3">
+          {cv.sections.skills.items.filter(s => s.visible).map(skill => (
+            <div class="space-y-2 pl-4">
+              <strong>{skill.name}</strong>
+              <p class="pl-8 text-sm">{skill.keywords.join(', ')}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </section>
+      </section>
+    )}
 
-    <section id="languages" class="section">
-      <h2 class="section-title">Langues</h2>
-        {cv.sections.languages.items.map(lang => (
-          <div class="list-disc list-inside text-sm ml-4 space-y-1">
-            <p><strong>{lang.name}</strong> — {lang.description}</p>
+    {isVisible(cv.sections.interests) && (
+      <section id="interests" class="section">
+        <h3 class="section-title">Centres d'intérêt</h3>
+        <div class="grid gap-x-6 gap-y-3">
+          {cv.sections.interests.items.filter(i => i.visible).map(interest => (
+            <div class="space-y-2 pl-4">
+              <strong>{interest.name}</strong>
+              <p class="pl-8 text-sm">{interest.keywords.join(', ')}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {isVisible(cv.sections.certifications) && (
+      <section id="certifications" class="section">
+        <h3 class="section-title">Certifications</h3>
+        {cv.sections.certifications.items.filter(c => c.visible).map(certif => (
+          <div class="list-disc list-inside text-sm ml-4">
+            <strong>{certif.name}</strong> — {certif.issuer}<br />
+            <small class="text-gray-500">{certif.date}</small>
           </div>
         ))}
-    </section>
+      </section>
+    )}
 
+    {isVisible(cv.sections.languages) && (
+      <section id="languages" class="section">
+        <h3 class="section-title">Langues</h3>
+        {cv.sections.languages.items.filter(l => l.visible).map(lang => (
+          <div class="list-disc list-inside text-sm ml-4">
+            <strong>{lang.name}</strong> — {lang.description}
+          </div>
+        ))}
+      </section>
+    )}
   </aside>
 
   <section class="main p-custom group space-y-4 col-span-2">
-    <section id="summary" class="section w-full max-w-2xl">
-      <h2 class="section-title">À propos</h2>
-      <div class="text-sm" set:html={cv.sections.summary.content}></div>
-    </section>
 
-    <section id="experience" class="section w-full max-w-2xl">
-      <h2 class="section-title">Expérience professionnelle</h2>
-      {cv.sections.experience.items.map(exp => (
-        <div class="mb-8">
-          <h3 class="text-xl font-semibold">{exp.position} — {exp.company}</h3>
-          <p class="text-sm text-gray-500"><em>{exp.date} | {exp.location}</em></p>
-          <div class="text-sm mt-2" set:html={exp.summary}></div>
-        </div>
-      ))}
-    </section>
+    {isVisible(cv.sections.summary) && (
+      <section id="summary" class="section w-full max-w-2xl">
+        <h2 class="section-title">À propos</h2>
+        <div class="text-sm" set:html={cv.sections.summary.content}></div>
+      </section>
+    )}
 
-    <section id="education" class="section w-full max-w-2xl">
-      <h2 class="section-title">Diplômes et formations</h2>
-      {cv.sections.education.items.map(edu => (
-        <div class="mb-8">
-          <h3 class="text-xl font-semibold">{edu.institution}</h3>
-          <p class="text-sm text-gray-500"><em>{edu.studyType} — {edu.area} ({edu.date})</em></p>
-          <div class="text-sm mt-2" set:html={edu.summary}></div>
-        </div>
-      ))}
-    </section>
+    {isVisible(cv.sections.experience) && (
+      <section id="experience" class="section w-full max-w-2xl">
+        <h2 class="section-title">Expérience professionnelle</h2>
+        {cv.sections.experience.items.filter(e => e.visible).map(exp => (
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold">{exp.position} — {exp.company}</h3>
+            <p class="text-sm text-gray-500"><em>{exp.date} | {exp.location}</em></p>
+            <div class="text-sm mt-2" set:html={exp.summary}></div>
+          </div>
+        ))}
+      </section>
+    )}
 
-    
+    {isVisible(cv.sections.education) && (
+      <section id="education" class="section w-full max-w-2xl">
+        <h2 class="section-title">Diplômes et formations</h2>
+        {cv.sections.education.items.filter(e => e.visible).map(edu => (
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold">{edu.institution}</h3>
+            <p class="text-sm text-gray-500"><em>{edu.studyType} — {edu.area} ({edu.date})</em></p>
+            <div class="text-sm mt-2" set:html={edu.summary}></div>
+          </div>
+        ))}
+      </section>
+    )}
 
-    <section id="references" class="section w-full max-w-2xl">
-      <h2 class="section-title">Références</h2>
-      {cv.sections.references.items.map(ref => (
-        <p class="text-sm"><strong>{ref.name}</strong> — {ref.description}</p>
-      ))}
-    </section>
+    {isVisible(cv.sections.references) && (
+      <section id="references" class="section w-full max-w-2xl">
+        <h2 class="section-title">Références</h2>
+        {cv.sections.references.items.filter(r => r.visible).map(ref => (
+          <p class="text-sm"><strong>{ref.name}</strong> — {ref.description}</p>
+        ))}
+      </section>
+    )}
+
   </section>
 </main>
 
 <footer class="bg-[var(--color-background)] dark:bg-gray-900 mt-8 py-6 border-t border-gray-200 dark:border-gray-700">
   <div class="max-w-[794px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4">
-    
     <div class="text-sm text-gray-500 dark:text-gray-400">
       © {new Date().getFullYear()} {cv.basics.name}. Tous droits réservés.
     </div>
-
     <div class="flex flex-col sm:flex-row gap-3">
       <button
         class="bg-white text-black dark:bg-gray-700 dark:text-white py-2 px-4 rounded-full shadow hover:bg-gray-200 dark:hover:bg-gray-600 transition"
         onclick="document.body.classList.toggle('dark')"
-      >
-        🌗 Mode
-      </button>
+      >🌗 Mode</button>
       <a
-        href="cv/cv.pdf"
+        href="./cv.pdf"
         target="_blank"
         class="bg-[var(--color-primary)] text-white py-2 px-4 rounded-full shadow hover:bg-opacity-90 transition"
-      >
-        📄 Télécharger CV
-      </a>
+      >📄 Télécharger CV</a>
     </div>
-
   </div>
 </footer>
