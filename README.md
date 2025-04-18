@@ -1,48 +1,101 @@
-# Astro Starter Kit: Basics
+# Curriculum Vitae Maxime BELLET
 
-```sh
-npm create astro@latest -- --template basics
+Projet CV développé avec **Astro** + **TailwindCSS**.
+Déploiement Githab pages via Github Action.
+
+---
+
+## Démo
+
+Vous pouvez visualiser le projet ici :
+https://tellebma.github.io/cv
+
+---
+
+## Stack Technique
+
+- [Astro](https://astro.build/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Phosphor Icons](https://phosphoricons.com/)
+- [Vite](https://vitejs.dev/)
+- [GitHub Actions](https://docs.github.com/actions) pour le déploiement automatique
+
+---
+
+## Fonctionnalités
+
+- Mise en page moderne en **format A4**
+- **Responsive** (adapté aux mobiles / tablettes)
+- **Mode Sombre/Clair** automatique
+- **Bouton de téléchargement** du CV au format PDF
+- **Donées dynamiques** (profil, skills, expérience, éducation...) à partir d'un fichier `cv.json`
+- **Custom fields** (ex: Permis B)
+- **Affichage dynamique des compétences** séparées par des virgules
+
+---
+
+## Arborescence du projet
+
+```bash
+/src
+  /data
+    cv.json    # Contient toutes les données du CV
+  /pages
+    index.astro
+  /styles
+    global.css  # Configuration des variables CSS et styles globaux
+public/
+  cv.pdf       # CV PDF téléchargeable
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Installation locale
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+git clone https://github.com/tellebma/cv.git
+cd cv
+npm install
+npm run dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Ensuite ouvrir : `http://localhost:4321`
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## Build Production
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+npm run build
+npm run preview
+```
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## TODO (Améliorations possibles)
+
+- Corriger téléchargement du fichier pdf
+- nettoyage du projet 
+- Ajout CI Sonar + checkmarx
+- Externalisation du cv.json
+- Ajout d'une génération de PDF automatique
+- Correctif du toggle du dark/light mode
+- Ajouter un mode "impression" spécifique (avec en-tête en mode clair)
+
+---
+
+## Auteur
+
+**Maxime BELLET**
+
+- [GitHub](https://github.com/tellebma)
+- [LinkedIn](https://www.linkedin.com/in/maxime-bellet)
+
+
+---
+
+## Licence
+
+MIT © Maxime BELLET
+
