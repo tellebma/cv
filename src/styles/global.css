@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,11 +6,11 @@
 /* Variables globales pour clair */
 @layer base {
   :root {
-    --color-background: #f3f4f6; /* bg-gray-100 */
-    --color-text: #111827;        /* text-gray-900 */
-    --color-primary: #0284c7;      /* Primary bleu (comme ton bandeau) */
-    --color-link: #2563eb;         /* Lien normal */
-    --color-link-hover: #1d4ed8;   /* Lien au survol */
+    --color-background: #ffffff; /* Blanc pour un fond lumineux */
+    --color-text: #0a1e2c;        /* Bleu nuit pour le texte principal */
+    --color-primary: #0055A4;     /* Bleu EDF */
+    --color-link: #0055A4;        /* Lien bleu EDF */
+    --color-link-hover: #FF7900;  /* Hover orange EDF */
   }
 
   body {
@@ -42,17 +43,16 @@
   li {
     color: var(--color-primary);
   }
-  
 }
 
 /* Variables globales pour dark mode */
 @layer base {
   body.dark {
-    --color-background: #111827; /* bg-gray-900 */
-    --color-text: #f3f4f6;        /* text-gray-100 */
-    --color-primary: #b37708;     /* Bleu plus clair en dark */
-    --color-link: #4e2e05;        /* Bleu clair */
-    --color-link-hover: #58452b;  /* Bleu encore plus clair au hover */
+    --color-background: #0a1e2c; /* Bleu nuit pour le fond en dark mode */
+    --color-text: #e5e7eb;       /* Gris clair pour le texte */
+    --color-primary: #FF7900;    /* Orange EDF pour le dark mode */
+    --color-link: #FF7900;       /* Orange EDF pour les liens */
+    --color-link-hover: #ffaa4d; /* Orange plus clair au survol */
 
     background-color: var(--color-background);
     color: var(--color-text);
@@ -67,10 +67,6 @@ button, .button {
 button:hover, .button:hover {
   background-color: var(--color-link-hover);
   color: white;
-}
-
-.pl-8{
-    padding-left: 8px;
 }
 
 /* Styles pour les sections */
@@ -88,11 +84,10 @@ button:hover, .button:hover {
     padding: 10px;
 }
 
-.ph{
+.ph {
     color: var(--color-primary);
     margin-right: 2px;
 }
-
 
 @media print {
     body {
@@ -104,5 +99,4 @@ button:hover, .button:hover {
       box-shadow: none;
       background: white;
     }
-  }
-  
+}

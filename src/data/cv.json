@@ -353,17 +353,6 @@
             ]
           },
           {
-            "id": "hb6tye171j38ttvd3s3n8aho",
-            "visible": true,
-            "name": "DevOps & Conteneurisation",
-            "description": "",
-            "level": 0,
-            "keywords": [
-              "Docker",
-              "Kubernetes"
-            ]
-          },
-          {
             "id": "go917u823nhvwh3wbtcl7tgk",
             "visible": true,
             "name": "Environnements OS",
@@ -384,21 +373,9 @@
               "Python",
               "Java",
               "C",
-              "HTML5 CSS JS",
               "PHP",
               "SQL",
               "Shell scripting"
-            ]
-          },
-          {
-            "id": "m4yob3wr84derbvqz9qplvlw",
-            "visible": true,
-            "name": "Méthodologies",
-            "description": "",
-            "level": 0,
-            "keywords": [
-              "Agile / Scrum",
-              "GitFlow / OneFlow"
             ]
           }
         ]
