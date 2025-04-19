@@ -18,7 +18,7 @@
         }
       ],
       "picture": {
-        "url": "https://media.licdn.com/dms/image/v2/C4D03AQGiBb4yVTGtbg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1646833829845?e=1750291200&v=beta&t=Rwu5DEXwZwCYfdvWTroN6ajYUQ_bhInshNpV5Gf6WYY",
+        "url": "images/photo.jpg",
         "size": 130,
         "aspectRatio": 1,
         "borderRadius": 9999,
@@ -282,12 +282,12 @@
         "name": "References",
         "columns": 1,
         "separateLinks": true,
-        "visible": false,
+        "visible": true,
         "id": "references",
         "items": [
           {
             "id": "oy8gcz9qxllxfo9kzuohxcpi",
-            "visible": false,
+            "visible": true,
             "name": "ANNO",
             "description": "EDF - Pilote de Produit ",
             "summary": "",

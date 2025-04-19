@@ -11,41 +11,44 @@ const isVisible = (section) => section?.visible !== false;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://unpkg.com/phosphor-icons"></script>
 </head>
+
 <div id="cvPage" class="max-w-[794px] mx-auto rounded-lg shadow overflow-hidden">
   <header class="relative p-8 pb-0 text-white rounded-t-lg">
     <div class="absolute inset-x-0 top-0 h-1/2 w-full bg-[var(--color-primary)]"></div>
     <div class="p-custom relative block sm:grid sm:grid-cols-3 sm:space-x-4 pb-0">
-      {cv.basics.picture?.url && (
-        <img src={cv.basics.picture.url} alt={`Profil de ${cv.basics.name}`} class="hidden sm:block rounded-full w-50 h-50" />
-      )}
-      <div class="relative z-10 sm:col-span-2 text-background h-50">
+      
+      <!-- Photo de profil locale -->
+      <img src="./images/profile.jpg" alt={`Profil de ${cv.basics.name}`} class="hidden sm:block rounded-full w-40 h-40 object-cover" />
+      
+      <div class="relative z-10 sm:col-span-2 text-background">
         <div class="space-y-0.5">
           <h2 class="text-3xl font-bold">{cv.basics.name}</h2>
           <h2 class="text-xl font-bold">{cv.basics.headline}</h2>
         </div>
+
         <div class="sm:col-span-2 sm:col-start-2 mt-10 text-foreground">
-          <div class="flex flex-wrap items-center gap-x-3 gap-y-0.5 text-sm" style="color: var(--color-link);">
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm" style="color: var(--color-link);">
             {cv.basics.location && (
-              <div class="flex items-center gap-x-1.5">
-                <i class="ph ph-map-pin text-primary"></i>
+              <div class="flex items-center gap-x-1">
+                <i class="ph-map-pin"></i>
                 <div>{cv.basics.location}</div>
               </div>
             )}
             {cv.basics.phone && (
-              <div class="flex items-center gap-x-1.5">
-                <i class="ph ph-phone text-primary"></i>
-                <div><a href={`tel:${cv.basics.phone}`} class="hover:underline">{cv.basics.phone}</a></div>
+              <div class="flex items-center gap-x-1">
+                <i class="ph-phone"></i>
+                <a href={`tel:${cv.basics.phone}`} class="hover:underline">{cv.basics.phone}</a>
               </div>
             )}
             {cv.basics.email && (
-              <div class="flex items-center gap-x-1.5">
-                <i class="ph ph-envelope text-primary"></i>
-                <div><a href={`mailto:${cv.basics.email}`} class="hover:underline">{cv.basics.email}</a></div>
+              <div class="flex items-center gap-x-1">
+                <i class="ph-envelope"></i>
+                <a href={`mailto:${cv.basics.email}`} class="hover:underline">{cv.basics.email}</a>
               </div>
             )}
             {cv.basics.customFields?.map(field => (
-              <div class="flex items-center gap-x-1.5">
-                <i class={`ph ph-${field.icon} text-primary`}></i>
+              <div class="flex items-center gap-x-1">
+                <i class={`ph-${field.icon}`}></i>
                 <div>{field.value}</div>
               </div>
             ))}
@@ -122,6 +125,15 @@ const isVisible = (section) => section?.visible !== false;
           ))}
         </section>
       )}
+
+      {isVisible(cv.sections.references) && (
+        <section id="references" class="section w-full max-w-2xl">
+          <h2 class="section-title">Références</h2>
+          {cv.sections.references.items.filter(r => r.visible).map(ref => (
+            <p class="text-sm"><strong>{ref.name}</strong> — {ref.description}</p>
+          ))}
+        </section>
+      )}
     </aside>
   
     <section class="main p-custom group space-y-4 col-span-2">
@@ -158,18 +170,9 @@ const isVisible = (section) => section?.visible !== false;
           ))}
         </section>
       )}
-  
-      {isVisible(cv.sections.references) && (
-        <section id="references" class="section w-full max-w-2xl">
-          <h2 class="section-title">Références</h2>
-          {cv.sections.references.items.filter(r => r.visible).map(ref => (
-            <p class="text-sm"><strong>{ref.name}</strong> — {ref.description}</p>
-          ))}
-        </section>
-      )}
-  
     </section>
   </main>
+</div>
 
 <footer class="bg-[var(--color-background)] dark:bg-gray-900 mt-8 py-6 border-t border-gray-200 dark:border-gray-700">
   <div class="max-w-[794px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4">
