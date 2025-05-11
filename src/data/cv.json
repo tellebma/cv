@@ -4,7 +4,7 @@
       "headline": "Ingénieur DevSecOps SRE",
       "email": "maxime.bllt@icloud.com",
       "phone": "+337 82 01 86 95",
-      "location": "Lyon et périphérie",
+      "location": "Lyon",
       "url": {
         "label": "",
         "href": ""
@@ -118,7 +118,7 @@
             "area": "Informatique et Réseaux de Communication",
             "score": "",
             "date": "2020 - 2023",
-            "summary": "<p><strong>Majeur Infrastructure et Sécurité des Réseaux et des Objets Communicants</strong></p><p>Réseaux &amp; Cloud: Architectures cloud (AWS, Azure), virtualisation, sécurité réseaux.</p><p>DevOps &amp; Conteneurisation: Docker, Kubernetes, automatisation CI/CD (GitLab).</p><p>Sécurité &amp; IoT: Sécurité avancée, objets connectés, traitement numérique du signal.</p><p>Développement: Programmation orientée objet (C, Java, Python), web dynamique (Twig, Symfony), bases de données.</p>",
+            "summary": "<p><strong>Majeur Infrastructure et Sécurité des Réseaux et des Objets Communicants</strong></p><p>Réseaux &amp; Cloud: Architectures cloud (AWS, Azure), virtualisation, sécurité réseaux.</p><p>DevOps &amp; Conteneurisation: Docker, Kubernetes, automatisation CI/CD (GitLab).</p><p>Sécurité &amp; IoT: Sécurité avancée, objets connectés, traitement numérique du signal.</p><p>Développement: Programmation orientée objet (C, Java, Python), Web dynamique.</p>",
             "url": {
               "label": "CPE IRC",
               "href": "https://www.cpe.fr/formation-numerique/ingenieur-informatique-reseaux/"
@@ -132,7 +132,7 @@
             "area": "Réseaux Informatiques et Telecomunications (Alternance)",
             "score": "",
             "date": "2018 - 2020",
-            "summary": "<p>Administration réseaux et systèmes (Linux, Windows Server, Active Directory).</p><p>Mise en place et sécurisation d’infrastructures réseau (DHCP, DNS, Web, Virtualisation).</p><p>Télécommunications : installation serveurs téléphoniques, analyse xDSL/fibre optique.</p><p>Développement web (HTML/CSS/PHP/JS), programmation orientée objet (Python), scripting Unix et PowerShell.</p>",
+            "summary": "<p>Administration réseaux et systèmes (Linux, Windows Server, Active Directory).</p><p>Mise en place et sécurisation d’infrastructures réseau (DHCP, DNS, Virtualisation).</p><p>Télécommunications : installation serveurs téléphoniques, analyse xDSL/fibre.</p><p>Développement web (HTML/CSS/PHP/JS), programmation orientée objet (Python), scripting Unix et PowerShell.</p>",
             "url": {
               "label": "UNIV IUT R&T",
               "href": "https://www.univ-smb.fr/iut-annecy/formation/reseaux-informatiques-et-telecoms/"
@@ -154,7 +154,7 @@
             "position": "Intégrateur Applicatif DevSecOps SRE",
             "location": "Lyon",
             "date": "Sept 2023 - Maintenant",
-            "summary": "<p>Conception et gestion des pipelines CI/CD sous Jenkins avec automatisation complète (build, tests, déploiement idempotent), analyses de qualité et sécurité (SonarQube, Checkmarx), et implémentation de Quality &amp; Security Gates sur des projets GitFlow et OneFlow.</p><p>Orchestration des déploiements applicatifs sur environnements de recette et production.</p><p>Maintien en conditions opérationnelles (MCO), suivi proactif des environnements, résolution d’incidents et gestion des anomalies complexes.</p><p>Connaissance approfondie des normes, procédures et architectures spécifiques à EDF.</p>",
+            "summary": "<p>Conception et gestion des pipelines CI/CD sous Jenkins avec automatisation complète (build, tests, déploiement idempotent), analyses de qualité et sécurité (SonarQube, Checkmarx), et implémentation de Quality &amp; Security Gates sur des projets GitFlow et OneFlow.</p><p>Orchestration des déploiements applicatifs sur environnements (recette, production).</p><p>Maintien en conditions opérationnelles (MCO), suivi proactif des environnements, résolution d’incidents et gestion des anomalies complexes.</p><p>Connaissance approfondie des normes, procédures et architectures propres à EDF.</p>",
             "url": {
               "label": "Thales Services Numérique",
               "href": "https://www.thalesgroup.com/fr/marches/defense-et-securite/activites-services-numeriques"
@@ -282,7 +282,7 @@
         "name": "References",
         "columns": 1,
         "separateLinks": true,
-        "visible": true,
+        "visible": false,
         "id": "references",
         "items": [
           {

@@ -13,13 +13,12 @@ const isVisible = (section) => section?.visible !== false;
   <script src="https://unpkg.com/phosphor-icons"></script>
 </head>
 
-<div id="cvPage" class="max-w-[794px] mx-auto rounded-lg shadow overflow-hidden">
-  <header class="relative p-8 pb-0 text-white rounded-t-lg">
-    <div class="absolute inset-x-0 top-0 h-3/5 w-full bg-[var(--color-primary)]"></div>
-    <div class="p-custom relative block sm:grid sm:grid-cols-3 sm:space-x-4 pb-0">
+<div id="cvPage" class="max-w-[794px] mx-auto overflow-hidden">
+  <header class="relative px-8 pb-0 pt-4 text-white">
+    <div class="absolute inset-x-0 top-0 h-3/5 w-full bg-[var(--color-primary)] rounded-b-lg"></div>
+    <div class="relative block sm:grid sm:grid-cols-3 sm:space-x-4 pb-0">
       
-      <!-- Photo de profil locale -->
-      <img src="./images/profile.jpg" alt={`Profil de ${cv.basics.name}`} class="hidden sm:block rounded-full w-40 h-40 object-cover" />
+      <img src="./images/profile.jpg" alt={`Profil de ${cv.basics.name}`} class="hidden sm:block rounded-full w-30 h-30 object-cover" />
       
       <div class="relative z-10 sm:col-span-2 text-background">
         <div class="space-y-0.5">
@@ -27,8 +26,8 @@ const isVisible = (section) => section?.visible !== false;
           <h2 class="text-xl font-bold">{cv.basics.headline}</h2>
         </div>
 
-        <div class="sm:col-span-2 sm:col-start-2 mt-10 text-foreground">
-          <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm" style="color: var(--color-link);">
+        <div class="sm:col-span-2 sm:col-start-2 mt-2 text-foreground">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm" style="color: var(--color-link);">
             {cv.basics.location && (
               <div class="flex items-center gap-x-1">
                 <i class="ph-map-pin"></i>
@@ -59,15 +58,15 @@ const isVisible = (section) => section?.visible !== false;
     </div>
   </header>
   
-  <main class="p-8 pt-0 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <main class="pt-0 grid grid-cols-1 md:grid-cols-3">
   
-    <aside class="sidebar p-custom group space-y-4">
+    <aside class=" ml-2 sidebar group space-y-4">
       {isVisible(cv.sections.profiles) && (
         <section id="profiles" class="section">
           <h3 class="section-title">Profils</h3>
           <ul class="space-y-2">
             {cv.sections.profiles.items.filter(p => p.visible).map(profile => (
-              <li class="flex items-center gap-2">
+              <li class="pl-4 flex items-center gap-2">
                 <i class={`ph ph-${profile.icon} text-xl`}></i>
                 <a href={profile.url.href} target="_blank" class="hover:underline">{profile.username}</a>
               </li>
@@ -83,7 +82,7 @@ const isVisible = (section) => section?.visible !== false;
             {cv.sections.skills.items.filter(s => s.visible).map(skill => (
               <div class="space-y-2 pl-4">
                 <strong>{skill.name}</strong>
-                <p class="pl-8 text-sm">{skill.keywords.join(', ')}</p>
+                <p class="pl-4 text-sm">{skill.keywords.join(', ')}</p>
               </div>
             ))}
           </div>
@@ -97,7 +96,7 @@ const isVisible = (section) => section?.visible !== false;
             {cv.sections.interests.items.filter(i => i.visible).map(interest => (
               <div class="space-y-2 pl-4">
                 <strong>{interest.name}</strong>
-                <p class="pl-8 text-sm">{interest.keywords.join(', ')}</p>
+                <p class="pl-4 text-sm">{interest.keywords.join(', ')}</p>
               </div>
             ))}
           </div>
@@ -128,30 +127,30 @@ const isVisible = (section) => section?.visible !== false;
       )}
 
       {isVisible(cv.sections.references) && (
-        <section id="references" class="section w-full max-w-2xl">
+        <section id="references" class="w-full max-w-xl">
           <h2 class="section-title">Références</h2>
           {cv.sections.references.items.filter(r => r.visible).map(ref => (
-            <p class="text-sm"><strong>{ref.name}</strong> — {ref.description}</p>
+            <p class="ml-4 text-sm"><strong>{ref.name}</strong> — {ref.description}</p>
           ))}
         </section>
       )}
     </aside>
   
-    <section class="main p-custom group space-y-4 col-span-2">
+    <section class="main group space-y-4 col-span-2">
   
       {isVisible(cv.sections.summary) && (
-        <section id="summary" class="section w-full max-w-2xl">
+        <section id="summary" class="w-full max-w-xl">
           <h2 class="section-title">À propos</h2>
           <div class="text-sm" set:html={cv.sections.summary.content}></div>
         </section>
       )}
   
       {isVisible(cv.sections.experience) && (
-        <section id="experience" class="section w-full max-w-2xl">
+        <section id="experience" class="w-full max-w-xl">
           <h2 class="section-title">Expérience professionnelle</h2>
           {cv.sections.experience.items.filter(e => e.visible).map(exp => (
-            <div class="mb-8">
-              <h3 class="text-xl font-semibold">{exp.position} — {exp.company}</h3>
+            <div class="mb-2">
+              <h3 class="text-l font-semibold">{exp.position} — {exp.company}</h3>
               <p class="text-sm text-gray-500"><em>{exp.date} | {exp.location}</em></p>
               <div class="text-sm mt-2" set:html={exp.summary}></div>
             </div>
@@ -160,11 +159,11 @@ const isVisible = (section) => section?.visible !== false;
       )}
   
       {isVisible(cv.sections.education) && (
-        <section id="education" class="section w-full max-w-2xl">
+        <section id="education" class="w-full max-w-xl">
           <h2 class="section-title">Diplômes et formations</h2>
           {cv.sections.education.items.filter(e => e.visible).map(edu => (
-            <div class="mb-8">
-              <h3 class="text-xl font-semibold">{edu.institution}</h3>
+            <div class="mb-2">
+              <h3 class="text-l font-semibold">{edu.institution}</h3>
               <p class="text-sm text-gray-500"><em>{edu.studyType} — {edu.area} ({edu.date})</em></p>
               <div class="text-sm mt-2" set:html={edu.summary}></div>
             </div>
@@ -175,7 +174,7 @@ const isVisible = (section) => section?.visible !== false;
   </main>
 </div>
 
-<footer class="bg-[var(--color-background)] dark:bg-gray-900 mt-8 py-6 border-t border-gray-200 dark:border-gray-700">
+<footer class="hidden bg-[var(--color-background)] dark:bg-gray-900 mt-8 py-6 border-t border-gray-200 dark:border-gray-700">
   <div class="max-w-[794px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4">
     <div class="text-sm text-gray-500 dark:text-gray-400">
       © {new Date().getFullYear()} {cv.basics.name}. Tous droits réservés.
