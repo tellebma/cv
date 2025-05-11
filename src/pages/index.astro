@@ -2,8 +2,6 @@
 import cv from '../data/cv.json';
 import '../styles/global.css';
 
-const MATOMO_URL = "https://matomo.tellebma.fr/";
-const MATOMO_SITE_ID = "1";
 const isVisible = (section) => section?.visible !== false;
 ---
 
@@ -18,9 +16,9 @@ const isVisible = (section) => section?.visible !== false;
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
-      var u = '{MATOMO_URL}';
+      var u = 'https://matomo.tellebma.fr/';
       _paq.push(['setTrackerUrl', u + 'matomo.php']);
-      _paq.push(['setSiteId', '{MATOMO_SITE_ID}']);
+      _paq.push(['setSiteId', '1']);
       var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
       g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
     })();
