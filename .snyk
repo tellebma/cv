@@ -1,5 +1,5 @@
 ignore:
   "@emnapi/core":
     - "*":
-        reason: "Included indirectly via tailwindcss — no direct usage"
+        reason: "False positive — transitive bundle from tailwindcss oxide"
         expires: "2028-01-01T00:00:00Z"

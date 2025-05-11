@@ -17,5 +17,7 @@ jobs:
 
       - name: Snyk Scan
         uses: snyk/actions/node@master
+        with:
+          command: test --severity-threshold=high
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
