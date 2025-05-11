@@ -13,7 +13,7 @@ const isVisible = (section) => section?.visible !== false;
   <script src="https://unpkg.com/phosphor-icons"></script>
 </head>
 
-<div id="cvPage" class="max-w-[794px] mx-auto overflow-hidden">
+<div id="cvPage" class="max-w-[794px] mx-auto rounded-b-lg shadow overflow-hidden">
   <header class="relative px-8 pb-0 pt-4 text-white">
     <div class="absolute inset-x-0 top-0 h-3/5 w-full bg-[var(--color-primary)] rounded-b-lg"></div>
     <div class="relative block sm:grid sm:grid-cols-3 sm:space-x-4 pb-0">
@@ -174,7 +174,7 @@ const isVisible = (section) => section?.visible !== false;
   </main>
 </div>
 
-<footer class="hidden bg-[var(--color-background)] dark:bg-gray-900 mt-8 py-6 border-t border-gray-200 dark:border-gray-700">
+<footer class="bg-[var(--color-background)] dark:bg-gray-900 mt-8 py-6 border-t border-gray-200 dark:border-gray-700">
   <div class="max-w-[794px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4">
     <div class="text-sm text-gray-500 dark:text-gray-400">
       © {new Date().getFullYear()} {cv.basics.name}. Tous droits réservés.
