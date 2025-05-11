@@ -1,0 +1,5 @@
+ignore:
+  "@emnapi/core":
+    - "*":
+        reason: "Included indirectly via tailwindcss — no direct usage"
+        expires: "2025-01-01T00:00:00Z"
