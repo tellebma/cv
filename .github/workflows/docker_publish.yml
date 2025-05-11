@@ -2,8 +2,9 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches:
-      - '**' # écoute tous les push sur toutes les branches
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
