@@ -3,7 +3,7 @@ WORKDIR /app
 
 # Copie uniquement les fichiers nécessaires au build
 COPY package.json package-lock.json ./
-RUN npm install --include=dev
+RUN npm install --ignore-scripts
 
 COPY public ./public
 COPY src ./src
