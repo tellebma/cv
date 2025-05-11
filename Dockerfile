@@ -15,10 +15,9 @@ COPY CNAME .
 
 RUN npm run build
 
-FROM nginx:alpine
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+FROM nginxinc/nginx-unprivileged:stable-alpine
 
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-USER appuser
+USER 101 
