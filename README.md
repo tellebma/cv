@@ -5,7 +5,6 @@ Déploiement via **GitHub Actions** sur **GitHub Pages**, **Docker Hub**, et sui
 
 ![GitHub Workflow Status](https://github.com/tellebma/cv/actions/workflows/main.yml/badge.svg)
 ![Docker Image](https://img.shields.io/docker/pulls/tellebma/cv)
-![Docker Image Size](https://img.shields.io/docker/image-size/tellebma/cv/latest)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=tellebma_cv&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tellebma_cv)
 [![Snyk Vulnerabilities](https://snyk.io/test/github/tellebma/cv/badge.svg)](https://snyk.io/test/github/tellebma/cv)
 [![Semgrep](https://img.shields.io/badge/semgrep-scanning-brightgreen)](https://semgrep.dev/orgs/tellebma)
