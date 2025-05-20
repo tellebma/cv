@@ -73,8 +73,7 @@ const isVisible = (section) => section?.visible !== false;
   </header>
   
   <main class="pt-0 grid grid-cols-1 md:grid-cols-3">
-  
-    <aside class=" ml-2 sidebar group space-y-4">
+    <aside class="ml-2 sidebar group space-y-4 md:ml-2">
       {isVisible(cv.sections.profiles) && (
         <section id="profiles" class="section">
           <h3 class="section-title">Profils</h3>
@@ -150,12 +149,11 @@ const isVisible = (section) => section?.visible !== false;
       )}
     </aside>
   
-    <section class="main group space-y-4 col-span-2">
-  
+    <section class="main group space-y-4 col-span-2 md:ml-2">
       {isVisible(cv.sections.summary) && (
         <section id="summary" class="w-full max-w-xl">
           <h2 class="section-title">À propos</h2>
-          <div class="text-sm" set:html={cv.sections.summary.content}></div>
+          <div class="text-sm ml-2" set:html={cv.sections.summary.content}></div>
         </section>
       )}
   
@@ -163,7 +161,7 @@ const isVisible = (section) => section?.visible !== false;
         <section id="experience" class="w-full max-w-xl">
           <h2 class="section-title">Expérience professionnelle</h2>
           {cv.sections.experience.items.filter(e => e.visible).map(exp => (
-            <div class="mb-2">
+            <div class="mb-2 ml-2">
               <h3 class="text-l font-semibold">{exp.position} — {exp.company}</h3>
               <p class="text-sm text-gray-500"><em>{exp.date} | {exp.location}</em></p>
               <div class="text-sm mt-2" set:html={exp.summary}></div>
@@ -176,7 +174,7 @@ const isVisible = (section) => section?.visible !== false;
         <section id="education" class="w-full max-w-xl">
           <h2 class="section-title">Diplômes et formations</h2>
           {cv.sections.education.items.filter(e => e.visible).map(edu => (
-            <div class="mb-2">
+            <div class="mb-2 ml-2">
               <h3 class="text-l font-semibold">{edu.institution}</h3>
               <p class="text-sm text-gray-500"><em>{edu.studyType} — {edu.area} ({edu.date})</em></p>
               <div class="text-sm mt-2" set:html={edu.summary}></div>
