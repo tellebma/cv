@@ -3,7 +3,8 @@
 Projet CV développé avec **Astro** + **TailwindCSS**.  
 Déploiement via **GitHub Actions** sur **GitHub Pages**, **Docker Hub**, et suivi via **Matomo**.
 
-![GitHub Workflow Status](https://github.com/tellebma/cv/actions/workflows/main.yml/badge.svg)
+[![Déployer sur GitHub Pages](https://github.com/tellebma/cv/actions/workflows/deploy_github_pages.yml/badge.svg)](https://github.com/tellebma/cv/actions/workflows/deploy_github_pages.yml)
+[![Build and Push Docker Image](https://github.com/tellebma/cv/actions/workflows/docker_publish.yml/badge.svg)](https://github.com/tellebma/cv/actions/workflows/docker_publish.yml)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=tellebma_cv&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tellebma_cv)
 [![Snyk Vulnerabilities](https://snyk.io/test/github/tellebma/cv/badge.svg)](https://snyk.io/test/github/tellebma/cv)
 [![Semgrep](https://img.shields.io/badge/semgrep-scanning-brightgreen)](https://semgrep.dev/orgs/tellebma)
