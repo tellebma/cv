@@ -73,7 +73,7 @@ const isVisible = (section) => section?.visible !== false;
   </header>
   
   <main class="pt-0 grid grid-cols-1 md:grid-cols-3">
-    <aside class="ml-2 sidebar group space-y-4 md:ml-2">
+    <aside class="ml-2 sidebar group space-y-4">
       {isVisible(cv.sections.profiles) && (
         <section id="profiles" class="section">
           <h3 class="section-title">Profils</h3>
@@ -149,7 +149,7 @@ const isVisible = (section) => section?.visible !== false;
       )}
     </aside>
   
-    <section class="main group space-y-4 col-span-2 md:ml-2">
+    <section class="main group space-y-4 col-span-2 ml-2 md:ml-0">
       {isVisible(cv.sections.summary) && (
         <section id="summary" class="w-full max-w-xl">
           <h2 class="section-title">À propos</h2>
