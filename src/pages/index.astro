@@ -161,10 +161,10 @@ const isVisible = (section) => section?.visible !== false;
         <section id="experience" class="w-full max-w-xl">
           <h2 class="section-title">Expérience professionnelle</h2>
           {cv.sections.experience.items.filter(e => e.visible).map(exp => (
-            <div class="mb-2 ml-2">
+            <div class="mb-2">
               <h3 class="text-l font-semibold">{exp.position} — {exp.company}</h3>
               <p class="text-sm text-gray-500"><em>{exp.date} | {exp.location}</em></p>
-              <div class="text-sm mt-2" set:html={exp.summary}></div>
+              <div class="text-sm mt-2 ml-2" set:html={exp.summary}></div>
             </div>
           ))}
         </section>
@@ -174,10 +174,10 @@ const isVisible = (section) => section?.visible !== false;
         <section id="education" class="w-full max-w-xl">
           <h2 class="section-title">Diplômes et formations</h2>
           {cv.sections.education.items.filter(e => e.visible).map(edu => (
-            <div class="mb-2 ml-2">
+            <div class="mb-2">
               <h3 class="text-l font-semibold">{edu.institution}</h3>
               <p class="text-sm text-gray-500"><em>{edu.studyType} — {edu.area} ({edu.date})</em></p>
-              <div class="text-sm mt-2" set:html={edu.summary}></div>
+              <div class="text-sm mt-2 ml-2" set:html={edu.summary}></div>
             </div>
           ))}
         </section>
