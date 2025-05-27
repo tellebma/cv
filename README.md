@@ -25,23 +25,18 @@ Déploiement via **GitHub Actions** sur **GitHub Pages**, **Docker Hub**, et sui
 
 - [Astro](https://astro.build/)
 - [TailwindCSS](https://tailwindcss.com/)
-- [Phosphor Icons](https://phosphoricons.com/)
 - [Vite](https://vitejs.dev/)
 - [GitHub Actions](https://docs.github.com/actions)
-- [Matomo](https://matomo.org/) pour l'analyse de trafic
 
 ---
 
 ## Fonctionnalités
 
-- Mise en page moderne en **format A4**
+- Mise en page du CV
 - **Responsive** (adapté aux mobiles / tablettes)
-- **Mode Sombre/Clair** automatique
+- **Mode Sombre/Clair** 
 - **Téléchargement PDF** du CV
-- **Données dynamiques** depuis `cv.json`
-- **Champs personnalisés** (ex: Permis B)
-- **Affichage des compétences** formaté dynamiquement
-- **Suivi du trafic** avec Matomo (`matomo.tellebma.fr`)
+- **Données dynamiques** depuis un fichier json
 
 ---
 
@@ -113,13 +108,11 @@ Le projet intègre plusieurs outils de CI pour la **qualité de code** et la **s
 ---
 
 ## TODO (Améliorations possibles)
-
-* Corriger téléchargement du fichier PDF
 * Nettoyage du projet
 * Ajouter génération de PDF automatique
-* Correctif du toggle dark/light mode
+* Correctif du toggle dark/light mode en automatique
 * Mode impression spécifique (avec en-tête en mode clair)
-* Externalisation du `cv.json`
+* github pages en mode preview pour les MR 
 
 ---
 
