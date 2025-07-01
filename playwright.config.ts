@@ -77,6 +77,13 @@ export default defineConfig({
     timeout: 120 * 1000,
   },
   
+  // Coverage collection
+  coverage: {
+    enabled: true,
+    include: ['src/**/*.{js,ts,astro}'],
+    exclude: ['src/types/**', 'src/assets/**'],
+  },
+  
   // Global setup and teardown
   globalSetup: './tests/global-setup.ts',
   
