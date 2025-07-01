@@ -8,9 +8,232 @@ const isVisible = (section) => section?.visible !== false;
 <head>
   <meta charset="UTF-8" />
   <title>{cv.basics.name} - {cv.basics.headline}</title>
+  <meta name="description" content="CV de {cv.basics.name}, {cv.basics.headline}. Expertise en DevSecOps, SRE et développement. Lyon, France." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a1e2c" media="(prefers-color-scheme: dark)" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="{cv.basics.name}" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="{cv.basics.name} - {cv.basics.headline}" />
+  <meta property="og:description" content="CV de {cv.basics.name}, {cv.basics.headline}. Expertise en DevSecOps, SRE et développement. Lyon, France." />
+  <meta property="og:image" content="{Astro.url.origin}/images/profile.jpg" />
+  <meta property="og:url" content="{Astro.url}" />
+  <meta property="profile:first_name" content="Maxime" />
+  <meta property="profile:last_name" content="BELLET" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="{cv.basics.name} - {cv.basics.headline}" />
+  <meta property="twitter:description" content="CV de {cv.basics.name}, {cv.basics.headline}. Expertise en DevSecOps, SRE et développement. Lyon, France." />
+  <meta property="twitter:image" content="{Astro.url.origin}/images/profile.jpg" />
+  
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{cv.basics.name}",
+    "jobTitle": "{cv.basics.headline}",
+    "email": "{cv.basics.email}",
+    "telephone": "{cv.basics.phone}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{cv.basics.location}",
+      "addressCountry": "FR"
+    },
+    "image": "{Astro.url.origin}/images/profile.jpg",
+    "sameAs": [
+      "https://github.com/tellebma",
+      "https://www.linkedin.com/in/maxime-bellet/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Thales Services"
+    }
+  }
+  </script>
+  
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="canonical" href="{Astro.url}" />
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="CV Maxime" />
+  <link rel="apple-touch-icon" href="./images/profile.jpg" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="./images/profile.jpg" as="image" type="image/jpeg" />
+  <link rel="dns-prefetch" href="//analytics.tellebma.fr" />
+  
+  <!-- Theme Script (inline for immediate execution) -->
+  <script is:inline>
+    // Initialize theme before page renders to avoid flash
+    (function() {
+      const getStoredTheme = () => {
+        try {
+          return localStorage.getItem('theme');
+        } catch (e) {
+          return null;
+        }
+      };
+      
+      const getSystemTheme = () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const getPreferredTheme = () => getStoredTheme() || getSystemTheme();
+      
+      const setTheme = (theme) => {
+        document.body.classList.toggle('dark', theme === 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (e) {
+          // localStorage not available
+        }
+        
+        // Update theme color meta tag for mobile browsers
+        const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeColorMeta) {
+          themeColorMeta.content = theme === 'dark' ? '#0a1e2c' : '#ffffff';
+        }
+      };
+      
+      setTheme(getPreferredTheme());
+      
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!getStoredTheme()) {
+          setTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+      
+      // Export toggle function for button
+      window.toggleTheme = () => {
+        const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+        
+        // Track theme changes
+        if (typeof _paq !== 'undefined') {
+          _paq.push(['trackEvent', 'UI', 'Theme Toggle', newTheme]);
+        }
+      };
+    })();
+  </script>
+  
   <script src="https://unpkg.com/phosphor-icons"></script>
+  
+  <!-- Service Worker Registration -->
+  <script is:inline>
+    // Register service worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then((registration) => {
+            console.log('SW registered: ', registration);
+            
+            // Check for updates
+            registration.addEventListener('updatefound', () => {
+              const newWorker = registration.installing;
+              if (newWorker) {
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New content is available
+                    if (confirm('Nouvelle version disponible. Actualiser ?')) {
+                      window.location.reload();
+                    }
+                  }
+                });
+              }
+            });
+          })
+          .catch((registrationError) => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+    
+    // Handle PWA install prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      deferredPrompt = e;
+      
+      // Show install button/banner if desired
+      const installButton = document.querySelector('#install-button');
+      if (installButton) {
+        installButton.style.display = 'block';
+        installButton.addEventListener('click', () => {
+          installButton.style.display = 'none';
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the A2HS prompt');
+            }
+            deferredPrompt = null;
+          });
+        });
+      }
+    });
+    
+    // Track app install
+    window.addEventListener('appinstalled', (evt) => {
+      console.log('App was installed');
+      if (typeof _paq !== 'undefined') {
+        _paq.push(['trackEvent', 'PWA', 'Install', 'Success']);
+      }
+    });
+  </script>
+  <!-- Web Vitals Monitoring -->
+  <script is:inline>
+    // Web Vitals tracking
+    function trackWebVital(name, value, id) {
+      if (typeof _paq !== 'undefined') {
+        _paq.push(['trackEvent', 'Web Vitals', name, Math.round(value)]);
+      }
+    }
+    
+    // Track Core Web Vitals when available
+    if ('PerformanceObserver' in window) {
+      // CLS (Cumulative Layout Shift)
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          if (!entry.hadRecentInput) {
+            trackWebVital('CLS', entry.value * 1000, entry.id);
+          }
+        }
+      }).observe({type: 'layout-shift', buffered: true});
+      
+      // LCP (Largest Contentful Paint)
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const lastEntry = entries[entries.length - 1];
+        trackWebVital('LCP', lastEntry.startTime, lastEntry.id);
+      }).observe({type: 'largest-contentful-paint', buffered: true});
+      
+      // FID (First Input Delay)
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          trackWebVital('FID', entry.processingStart - entry.startTime, entry.id);
+        }
+      }).observe({type: 'first-input', buffered: true});
+    }
+    
+    // Track page load time
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const navTiming = performance.getEntriesByType('navigation')[0];
+        if (navTiming) {
+          trackWebVital('Page Load', navTiming.loadEventEnd - navTiming.fetchStart);
+        }
+      }, 0);
+    });
+  </script>
+  
   <!-- Matomo -->
   <script  is:inline>
     var _paq = window._paq = window._paq || [];
@@ -27,61 +250,87 @@ const isVisible = (section) => section?.visible !== false;
   </script>
 </head>
 
+<!-- Skip to content link for accessibility -->
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
 <div id="cvPage" class="max-w-[794px] mx-auto rounded-b-lg shadow overflow-hidden">
-  <header class="relative px-8 pb-0 pt-4 text-white">
+  <header class="relative px-8 pb-0 pt-4 text-white" role="banner">
     <div class="absolute inset-x-0 top-0 h-3/5 w-full bg-[var(--color-primary)] rounded-b-lg"></div>
     <div class="relative block sm:grid sm:grid-cols-3 sm:space-x-4 pb-0">
       
-      <img src="./images/profile.jpg" alt={`Profil de ${cv.basics.name}`} class="hidden sm:block rounded-full w-30 h-30 object-cover" />
+      <picture class="hidden sm:block">
+        <source srcset="./images/profile.webp" type="image/webp" />
+        <img 
+          src="./images/profile.jpg" 
+          alt={`Photo de profil de ${cv.basics.name}, ${cv.basics.headline}`} 
+          class="rounded-full w-30 h-30 object-cover transition-transform duration-300 hover:scale-105" 
+          loading="eager"
+          width="120"
+          height="120"
+        />
+      </picture>
+      
+      <!-- Mobile profile image -->
+      <picture class="sm:hidden mx-auto mb-4 block">
+        <source srcset="./images/profile.webp" type="image/webp" />
+        <img 
+          src="./images/profile.jpg" 
+          alt={`Photo de profil de ${cv.basics.name}, ${cv.basics.headline}`} 
+          class="rounded-full w-24 h-24 mx-auto object-cover transition-transform duration-300 hover:scale-105" 
+          loading="eager"
+          width="96"
+          height="96"
+        />
+      </picture>
       
       <div class="relative z-10 sm:col-span-2 text-background">
         <div class="space-y-0.5">
-          <h2 class="text-3xl font-bold">{cv.basics.name}</h2>
-          <h2 class="text-xl font-bold">{cv.basics.headline}</h2>
+          <h1 class="text-3xl font-bold">{cv.basics.name}</h1>
+          <p class="text-xl font-bold" role="doc-subtitle">{cv.basics.headline}</p>
         </div>
 
-        <div class="sm:col-span-2 sm:col-start-2 mt-2 text-foreground">
+        <address class="sm:col-span-2 sm:col-start-2 mt-2 text-foreground not-italic">
           <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm" style="color: var(--color-link);">
             {cv.basics.location && (
               <div class="flex items-center gap-x-1">
-                <i class="ph-map-pin"></i>
-                <div>{cv.basics.location}</div>
+                <i class="ph-map-pin" aria-hidden="true"></i>
+                <span>{cv.basics.location}</span>
               </div>
             )}
             {cv.basics.phone && (
               <div class="flex items-center gap-x-1">
-                <i class="ph-phone"></i>
-                <a href={`tel:${cv.basics.phone}`} class="hover:underline">{cv.basics.phone}</a>
+                <i class="ph-phone" aria-hidden="true"></i>
+                <a href={`tel:${cv.basics.phone}`} class="hover:underline animated-link" aria-label={`Appeler ${cv.basics.phone}`}>{cv.basics.phone}</a>
               </div>
             )}
             {cv.basics.email && (
               <div class="flex items-center gap-x-1">
-                <i class="ph-envelope"></i>
-                <a href={`mailto:${cv.basics.email}`} class="hover:underline">{cv.basics.email}</a>
+                <i class="ph-envelope" aria-hidden="true"></i>
+                <a href={`mailto:${cv.basics.email}`} class="hover:underline animated-link" aria-label={`Envoyer un email à ${cv.basics.email}`}>{cv.basics.email}</a>
               </div>
             )}
             {cv.basics.customFields?.map(field => (
               <div class="flex items-center gap-x-1">
-                <i class={`ph-${field.icon}`}></i>
-                <div>{field.value}</div>
+                <i class={`ph-${field.icon}`} aria-hidden="true"></i>
+                <span>{field.value}</span>
               </div>
             ))}
           </div>
-        </div>
+        </address>
       </div>
     </div>
   </header>
   
-  <main class="pt-0 grid grid-cols-1 md:grid-cols-3">
-    <aside class="ml-2 sidebar group space-y-4">
+  <main class="pt-0 grid grid-cols-1 md:grid-cols-3" id="main-content" role="main">
+    <aside class="ml-2 sidebar group space-y-4" role="complementary" aria-label="Informations complémentaires">
       {isVisible(cv.sections.profiles) && (
-        <section id="profiles" class="section">
-          <h3 class="section-title">Profils</h3>
-          <ul class="space-y-2">
+        <section id="profiles" class="section reveal">
+          <h2 class="section-title">Profils</h2>
+          <ul class="space-y-2" role="list">
             {cv.sections.profiles.items.filter(p => p.visible).map(profile => (
               <li class="pl-4 flex items-center gap-2">
-                <i class={`ph ph-${profile.icon} text-xl`}></i>
-                <a href={profile.url.href} target="_blank" class="hover:underline">{profile.username}</a>
+                <i class={`ph ph-${profile.icon} text-xl`} aria-hidden="true"></i>
+                <a href={profile.url.href} target="_blank" rel="noopener noreferrer" class="hover:underline animated-link" aria-label={`Profil ${profile.network} : ${profile.username}`}>{profile.username}</a>
               </li>
             ))}
           </ul>
@@ -89,12 +338,12 @@ const isVisible = (section) => section?.visible !== false;
       )}
   
       {isVisible(cv.sections.skills) && (
-        <section id="skills" class="section">
-          <h3 class="section-title">Compétences</h3>
+        <section id="skills" class="section reveal">
+          <h2 class="section-title">Compétences</h2>
           <div class="grid gap-x-6 gap-y-3">
             {cv.sections.skills.items.filter(s => s.visible).map(skill => (
-              <div class="space-y-2 pl-4">
-                <strong>{skill.name}</strong>
+              <div class="space-y-2 pl-4 card">
+                <h3 class="font-semibold">{skill.name}</h3>
                 <p class="pl-4 text-sm">{skill.keywords.join(', ')}</p>
               </div>
             ))}
@@ -103,12 +352,12 @@ const isVisible = (section) => section?.visible !== false;
       )}
   
       {isVisible(cv.sections.interests) && (
-        <section id="interests" class="section">
-          <h3 class="section-title">Centres d'intérêt</h3>
+        <section id="interests" class="section reveal">
+          <h2 class="section-title">Centres d'intérêt</h2>
           <div class="grid gap-x-6 gap-y-3">
             {cv.sections.interests.items.filter(i => i.visible).map(interest => (
-              <div class="space-y-2 pl-4">
-                <strong>{interest.name}</strong>
+              <div class="space-y-2 pl-4 card">
+                <h3 class="font-semibold">{interest.name}</h3>
                 <p class="pl-4 text-sm">{interest.keywords.join(', ')}</p>
               </div>
             ))}
@@ -117,90 +366,151 @@ const isVisible = (section) => section?.visible !== false;
       )}
   
       {isVisible(cv.sections.certifications) && (
-        <section id="certifications" class="section">
-          <h3 class="section-title">Certifications</h3>
-          {cv.sections.certifications.items.filter(c => c.visible).map(certif => (
-            <div class="list-disc list-inside text-sm ml-4">
-              <strong>{certif.name}</strong> — {certif.issuer}<br />
-              <small class="text-gray-500">{certif.date}</small>
-            </div>
-          ))}
+        <section id="certifications" class="section reveal">
+          <h2 class="section-title">Certifications</h2>
+          <ul class="space-y-2" role="list">
+            {cv.sections.certifications.items.filter(c => c.visible).map(certif => (
+              <li class="text-sm ml-4 card">
+                <h3 class="font-semibold">{certif.name}</h3>
+                <p class="text-gray-600 dark:text-gray-300">{certif.issuer}</p>
+                <time class="text-gray-500 text-xs" datetime={certif.date}>{certif.date}</time>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
   
       {isVisible(cv.sections.languages) && (
-        <section id="languages" class="section">
-          <h3 class="section-title">Langues</h3>
-          {cv.sections.languages.items.filter(l => l.visible).map(lang => (
-            <div class="list-disc list-inside text-sm ml-4">
-              <strong>{lang.name}</strong> — {lang.description}
-            </div>
-          ))}
+        <section id="languages" class="section reveal">
+          <h2 class="section-title">Langues</h2>
+          <ul class="space-y-2" role="list">
+            {cv.sections.languages.items.filter(l => l.visible).map(lang => (
+              <li class="text-sm ml-4 card">
+                <span class="font-semibold">{lang.name}</span> — <span>{lang.description}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
       {isVisible(cv.sections.references) && (
-        <section id="references" class="w-full max-w-xl">
+        <section id="references" class="w-full max-w-xl section reveal">
           <h2 class="section-title">Références</h2>
-          {cv.sections.references.items.filter(r => r.visible).map(ref => (
-            <p class="ml-4 text-sm"><strong>{ref.name}</strong> — {ref.description}</p>
-          ))}
+          <ul class="space-y-2" role="list">
+            {cv.sections.references.items.filter(r => r.visible).map(ref => (
+              <li class="ml-4 text-sm card">
+                <span class="font-semibold">{ref.name}</span> — <span>{ref.description}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
     </aside>
   
     <section class="main group space-y-4 col-span-2 ml-2 md:ml-0">
       {isVisible(cv.sections.summary) && (
-        <section id="summary" class="w-full max-w-xl">
+        <section id="summary" class="w-full max-w-xl section reveal">
           <h2 class="section-title">À propos</h2>
-          <div class="text-sm ml-2" set:html={cv.sections.summary.content}></div>
+          <div class="text-sm ml-2 card" set:html={cv.sections.summary.content}></div>
         </section>
       )}
   
       {isVisible(cv.sections.experience) && (
-        <section id="experience" class="w-full max-w-xl">
+        <section id="experience" class="w-full max-w-xl section reveal">
           <h2 class="section-title">Expérience professionnelle</h2>
-          {cv.sections.experience.items.filter(e => e.visible).map(exp => (
-            <div class="mb-2">
-              <h3 class="text-l font-semibold">{exp.position} — {exp.company}</h3>
-              <p class="text-sm text-gray-500"><em>{exp.date} | {exp.location}</em></p>
-              <div class="text-sm mt-2 ml-2" set:html={exp.summary}></div>
-            </div>
-          ))}
+          <div class="space-y-4">
+            {cv.sections.experience.items.filter(e => e.visible).map(exp => (
+              <article class="experience-item">
+                <h3 class="text-lg font-semibold text-[var(--color-primary)]">{exp.position}</h3>
+                <h4 class="text-base font-medium">{exp.company}</h4>
+                <p class="text-sm text-gray-500">
+                  <time datetime={exp.date}>{exp.date}</time> | <span>{exp.location}</span>
+                </p>
+                <div class="text-sm mt-2 ml-2" set:html={exp.summary}></div>
+              </article>
+            ))}
+          </div>
         </section>
       )}
   
       {isVisible(cv.sections.education) && (
-        <section id="education" class="w-full max-w-xl">
+        <section id="education" class="w-full max-w-xl section reveal">
           <h2 class="section-title">Diplômes et formations</h2>
-          {cv.sections.education.items.filter(e => e.visible).map(edu => (
-            <div class="mb-2">
-              <h3 class="text-l font-semibold">{edu.institution}</h3>
-              <p class="text-sm text-gray-500"><em>{edu.studyType} — {edu.area} ({edu.date})</em></p>
-              <div class="text-sm mt-2 ml-2" set:html={edu.summary}></div>
-            </div>
-          ))}
+          <div class="space-y-4">
+            {cv.sections.education.items.filter(e => e.visible).map(edu => (
+              <article class="education-item">
+                <h3 class="text-lg font-semibold text-[var(--color-primary)]">{edu.institution}</h3>
+                <h4 class="text-base font-medium">{edu.studyType} — {edu.area}</h4>
+                <p class="text-sm text-gray-500">
+                  <time datetime={edu.date}>({edu.date})</time>
+                </p>
+                <div class="text-sm mt-2 ml-2" set:html={edu.summary}></div>
+              </article>
+            ))}
+          </div>
         </section>
       )}
     </section>
   </main>
 </div>
 
-<footer class="bg-[var(--color-background)] dark:bg-gray-900 mt-8 py-6 border-t border-gray-200 dark:border-gray-700">
+<footer class="bg-[var(--color-background)] dark:bg-gray-900 mt-8 py-6 border-t border-gray-200 dark:border-gray-700" role="contentinfo">
   <div class="max-w-[794px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4">
     <div class="text-sm text-gray-500 dark:text-gray-400">
-      © {new Date().getFullYear()} {cv.basics.name}. Tous droits réservés.
+      © <time datetime="{new Date().getFullYear()}">{new Date().getFullYear()}</time> {cv.basics.name}. Tous droits réservés.
     </div>
-    <div class="flex flex-col sm:flex-row gap-3">
+    <nav class="flex flex-col sm:flex-row gap-3" aria-label="Actions principales">
       <button
-        class="bg-white text-black dark:bg-gray-700 dark:text-white py-2 px-4 rounded-full shadow hover:bg-gray-200 dark:hover:bg-gray-600 transition"
-        onclick="document.body.classList.toggle('dark')"
-      >🌗 Mode</button>
+        class="bg-white text-black dark:bg-gray-700 dark:text-white py-3 px-6 rounded-full shadow hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 min-h-[44px] min-w-[44px]"
+        onclick="window.toggleTheme()"
+        aria-label="Basculer entre mode clair et mode sombre"
+        type="button"
+      ><span aria-hidden="true">🌗</span> Mode</button>
       <a
         href="./cv.pdf"
         target="_blank"
-        class="bg-[var(--color-primary)] text-white py-2 px-4 rounded-full shadow hover:bg-opacity-90 transition"
-      >📄 Télécharger CV</a>
-    </div>
+        rel="noopener noreferrer"
+        class="bg-[var(--color-primary)] text-white py-3 px-6 rounded-full shadow hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 min-h-[44px] inline-flex items-center justify-center"
+        onclick="if(typeof _paq !== 'undefined') _paq.push(['trackEvent', 'CV', 'Download', 'PDF']);"
+        aria-label="Télécharger le CV au format PDF"
+      ><span aria-hidden="true">📄</span> Télécharger CV</a>
+    </nav>
   </div>
 </footer>
+
+<!-- Scroll reveal animation script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Preload images for better performance
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src || img.src;
+          img.removeAttribute('loading');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+  });
+</script>

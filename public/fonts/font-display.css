@@ -1,0 +1,53 @@
+/* System font stack with fallbacks for better performance */
+@font-face {
+  font-family: 'System';
+  src: local('system-ui'),
+       local('-apple-system'),
+       local('BlinkMacSystemFont'),
+       local('Segoe UI'),
+       local('Roboto'),
+       local('Oxygen'),
+       local('Ubuntu'),
+       local('Cantarell'),
+       local('Open Sans'),
+       local('Helvetica Neue'),
+       local('sans-serif');
+  font-display: swap;
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Optimized web font loading (if using custom fonts) */
+@font-face {
+  font-family: 'Inter';
+  src: url('./inter-variable.woff2') format('woff2-variations');
+  font-display: swap;
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Preload critical font subsets */
+@font-face {
+  font-family: 'Inter-Critical';
+  src: url('./inter-latin-400.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Font loading optimization */
+.fonts-loading body {
+  visibility: hidden;
+}
+
+.fonts-loaded body {
+  visibility: visible;
+}
+
+/* Reduce layout shift with size-adjust if needed */
+@font-face {
+  font-family: 'System-Fallback';
+  src: local('Arial'), local('Helvetica'), local('sans-serif');
+  size-adjust: 106%; /* Adjust based on your primary font metrics */
+}

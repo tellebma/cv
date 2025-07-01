@@ -1,0 +1,111 @@
+# Page snapshot
+
+```yaml
+- link "Aller au contenu principal":
+  - /url: "#main-content"
+- banner:
+  - img "Photo de profil de Maxime BELLET, Ingénieur DevSecOps SRE"
+  - heading "Maxime BELLET" [level=1]
+  - paragraph: Ingénieur DevSecOps SRE
+  - text: Lyon
+  - link "Appeler +337 82 01 86 95":
+    - /url: tel:+337 82 01 86 95
+    - text: +337 82 01 86 95
+  - link "Envoyer un email à maxime.bllt@icloud.com":
+    - /url: mailto:maxime.bllt@icloud.com
+    - text: maxime.bllt@icloud.com
+  - text: Permis B
+- main:
+  - complementary "Informations complémentaires":
+    - heading "Profils" [level=2]
+    - list:
+      - listitem:
+        - 'link "Profil GitHub : tellebma"':
+          - /url: https://github.com/tellebma
+          - text: tellebma
+      - listitem:
+        - 'link "Profil Linkedin : maxime-bellet"':
+          - /url: https://www.linkedin.com/in/maxime-bellet/
+          - text: maxime-bellet
+    - heading "Compétences" [level=2]
+    - heading "Outils CI/CD" [level=3]
+    - paragraph: Jenkins, Gitlab CI, Ansible
+    - heading "Cloud & Virtualisation" [level=3]
+    - paragraph: AWS, GCP, Azure, Virtualisation (VMware)
+    - heading "Environnements OS" [level=3]
+    - paragraph: Linux/Unix, Windows Server
+    - heading "Développement" [level=3]
+    - paragraph: Python, Java, C, PHP, SQL, Shell scripting
+    - heading "Centres d'intérêt" [level=2]
+    - heading "Sport" [level=3]
+    - paragraph: Cyclisme, Course à pied, Basket ball
+    - heading "Jeux de société" [level=3]
+    - paragraph
+    - heading "Certifications" [level=2]
+    - list:
+      - listitem:
+        - heading "Cambridge CAE" [level=3]
+        - paragraph: Cambridge University Press & Assessment
+        - time: Décembre 2022
+      - listitem:
+        - heading "Cisco Certified Network Associate Security (CCNA)" [level=3]
+        - paragraph: Cisco NetAcad
+        - time: Juin 2019
+    - heading "Langues" [level=2]
+    - list:
+      - listitem: Anglais — Niveau C1
+      - listitem: Espagnol — Niveau B1
+  - heading "À propos" [level=2]
+  - paragraph: Ingénieur diplômé de CPE Lyon en Informatique et Réseaux de Communication, spécialisé en Réseaux et DevOps. J’ai développé une solide expertise technique en développement logiciel puis en DevOps lors de mes 5 années d’alternance chez Orange, avant d’intégrer Thales Services en tant qu’intégrateur applicatif DevSecOps et SRE sur une mission chez EDF.
+  - heading "Expérience professionnelle" [level=2]
+  - article:
+    - heading "Intégrateur Applicatif DevSecOps SRE" [level=3]
+    - heading "Thales Services (Mission EDF – DPNT/DivNum)" [level=4]
+    - paragraph:
+      - time: Sept 2023 - Maintenant
+      - text: "| Lyon"
+    - paragraph: Conception et gestion des pipelines CI/CD sous Jenkins avec automatisation complète (build, tests, déploiement idempotent), analyses de qualité et sécurité (SonarQube, Checkmarx), et implémentation de Quality & Security Gates sur des projets GitFlow et OneFlow.
+    - paragraph: Orchestration des déploiements applicatifs sur environnements (recette, production).
+    - paragraph: Maintien en conditions opérationnelles (MCO), suivi proactif des environnements, résolution d’incidents et gestion des anomalies complexes.
+    - paragraph: Connaissance approfondie des normes, procédures et architectures propres à EDF.
+  - article:
+    - heading "Développeur puis Ingénieur DevOps (Alternance)" [level=3]
+    - heading "Orange" [level=4]
+    - paragraph:
+      - time: 2018 - 2023
+      - text: "| Lyon"
+    - paragraph: Industrialisation et maintenance d’applications critiques (Python, API, Docker).
+    - paragraph: Mise en place de pipelines CI/CD (GitLab CI, SonarQube, Ansible).
+    - paragraph: Automatisation de processus techniques (gestion d’alarmes RTC).
+    - paragraph: Travail en équipe agile avec cycles de développement itératifs.
+  - heading "Diplômes et formations" [level=2]
+  - article:
+    - heading "CPE Lyon" [level=3]
+    - heading "Diplôme d'Ingénieur — Informatique et Réseaux de Communication" [level=4]
+    - paragraph:
+      - time: (2020 - 2023)
+    - paragraph:
+      - strong: Majeur Infrastructure et Sécurité des Réseaux et des Objets Communicants
+    - paragraph: "Réseaux & Cloud: Architectures cloud (AWS, Azure), virtualisation, sécurité réseaux."
+    - paragraph: "DevOps & Conteneurisation: Docker, Kubernetes, automatisation CI/CD (GitLab)."
+    - paragraph: "Sécurité & IoT: Sécurité avancée, objets connectés, traitement numérique du signal."
+    - paragraph: "Développement: Programmation orientée objet (C, Java, Python), Web dynamique."
+  - article:
+    - heading "IUT Annecy" [level=3]
+    - heading "DUT — Réseaux Informatiques et Telecomunications (Alternance)" [level=4]
+    - paragraph:
+      - time: (2018 - 2020)
+    - paragraph: Administration réseaux et systèmes (Linux, Windows Server, Active Directory).
+    - paragraph: Mise en place et sécurisation d’infrastructures réseau (DHCP, DNS, Virtualisation).
+    - paragraph: "Télécommunications : installation serveurs téléphoniques, analyse xDSL/fibre."
+    - paragraph: Développement web (HTML/CSS/PHP/JS), programmation orientée objet (Python), scripting Unix et PowerShell.
+- contentinfo:
+  - text: ©
+  - time: "2025"
+  - text: Maxime BELLET. Tous droits réservés.
+  - navigation "Actions principales":
+    - button "Basculer entre mode clair et mode sombre": Mode
+    - link "Télécharger le CV au format PDF":
+      - /url: ./cv.pdf
+      - text: Télécharger CV
+```
