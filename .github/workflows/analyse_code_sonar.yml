@@ -17,8 +17,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+          cache: 'npm'
 
-      - run: npm install
+      - run: npm ci
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
