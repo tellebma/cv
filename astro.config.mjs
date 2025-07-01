@@ -47,10 +47,6 @@ export default defineConfig({
     },
   },
   
-  // Experimental features for performance
-  experimental: {
-    optimizeHoistedScript: true,
-  },
   
   // Prefetch configuration
   prefetch: {
