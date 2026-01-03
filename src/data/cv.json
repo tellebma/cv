@@ -1,440 +1,416 @@
 {
-    "basics": {
-      "name": "Maxime BELLET",
-      "headline": "Ingénieur DevSecOps SRE",
-      "email": "maxime.bllt@icloud.com",
-      "phone": "+337 82 01 86 95",
-      "location": "Lyon",
-      "url": {
-        "label": "",
-        "href": ""
-      },
-      "customFields": [
+  "basics": {
+    "name": "Tristan BELLET",
+    "headline": "Étudiant Ingénieur - Data Engineering & IA",
+    "email": "tristan.bellet@outlook.fr",
+    "phone": "+33 6 01 80 31 82",
+    "location": "Lyon",
+    "url": {
+      "label": "",
+      "href": ""
+    },
+    "customFields": [
+      {
+        "id": "f5op3exo1xzzuu8619eljsf3",
+        "icon": "car",
+        "name": "",
+        "value": "Permis B"
+      }
+    ],
+    "picture": {
+      "url": "images/photo.jpg",
+      "size": 130,
+      "aspectRatio": 1,
+      "borderRadius": 9999,
+      "effects": {
+        "hidden": false,
+        "border": false,
+        "grayscale": false
+      }
+    }
+  },
+  "sections": {
+    "summary": {
+      "name": "",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "summary",
+      "content": "<p>Issu d'un parcours technique en IT, j'ai évolué vers la conception logicielle et la gestion de big data. Je maîtrise la manipulation des données ainsi que la construction de modèles prédictifs. Je recherche un stage de fin d'études de 6 mois dans les métiers du data engineering, la data ou de l'intelligence Artificielle à partir de mars 2026 dans l'objectif de mettre à profit ma rigueur et mes compétences en modélisation afin de résoudre des défis analytiques stimulants.</p>"
+    },
+    "awards": {
+      "name": "Awards",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "awards",
+      "items": []
+    },
+    "certifications": {
+      "name": "Cértifications",
+      "columns": 1,
+      "separateLinks": false,
+      "visible": false,
+      "id": "certifications",
+      "items": [
         {
-          "id": "f5op3exo1xzzuu8619eljsf3",
-          "icon": "car",
-          "name": "",
-          "value": "Permis B"
+          "id": "qmfvai2pv78973en18i56ft4",
+          "visible": false,
+          "name": "Cambridge CAE",
+          "issuer": "Cambridge University Press & Assessment",
+          "date": "Prévisionnel 2026",
+          "summary": "<p>Certification B2 Anglais</p>",
+          "url": {
+            "label": "Cambridge English",
+            "href": "https://www.cambridgeenglish.org/"
+          }
         }
-      ],
-      "picture": {
-        "url": "images/photo.jpg",
-        "size": 130,
-        "aspectRatio": 1,
-        "borderRadius": 9999,
-        "effects": {
-          "hidden": false,
-          "border": false,
-          "grayscale": false
+      ]
+    },
+    "education": {
+      "name": "Diplômes et Formations",
+      "columns": 1,
+      "separateLinks": false,
+      "visible": true,
+      "id": "education",
+      "items": [
+        {
+          "id": "cpe_tristan",
+          "visible": true,
+          "institution": "CPE Lyon",
+          "studyType": "Diplôme d'Ingénieur",
+          "area": "Électronique, Télécommunications et Informatique",
+          "score": "",
+          "date": "2023 - 2026 (prévisionnel)",
+          "summary": "<p><strong>Majeure : Conception logicielle et Big Data</strong></p><p>Tronc commun : Mathématiques algébriques, Traitement d'image, électronique, systèmes embarqués, réseau</p><p>Participation au concours d'entreprenariat, Campus Création 2023-2024</p>",
+          "url": {
+            "label": "CPE Lyon",
+            "href": "https://www.cpe.fr/"
+          }
+        },
+        {
+          "id": "chartreux_tristan",
+          "visible": true,
+          "institution": "Classes préparatoires des Chartreux associées à CPE Lyon",
+          "studyType": "Classes Préparatoires",
+          "area": "PCSI - PSI",
+          "score": "",
+          "date": "2020 - 2022",
+          "summary": "<p>2 ans de classes préparatoires en filière (PCSI - PSI)</p>",
+          "url": {
+            "label": "Classes Préparatoires",
+            "href": ""
+          }
         }
+      ]
+    },
+    "experience": {
+      "name": "Expérience Professionnelle",
+      "columns": 1,
+      "separateLinks": false,
+      "visible": true,
+      "id": "experience",
+      "items": [
+        {
+          "id": "stage_hexagon",
+          "visible": true,
+          "company": "Hexagon MI",
+          "position": "Stage d'Ingénierie Logicielle et Systèmes",
+          "location": "Camarillo, CA USA",
+          "date": "Août 2024 – Juillet 2025",
+          "summary": "<p><strong>Automatisation & Optimisation des Processus IT</strong></p><p>Automatisation des tâches : Création de solutions (scripts, workflows) pour fiabiliser et accélérer les opérations IT complexes et quotidiennes, libérant du temps pour l'équipe.</p><p>Optimisation de l'Offboarding : Refonte et simplification du processus de retour des équipements. Résultat : Réduction du temps de traitement des départs et amélioration du suivi de l'inventaire matériel.</p>",
+          "url": {
+            "label": "Hexagon MI",
+            "href": "https://hexagon.com/"
+          }
+        },
+        {
+          "id": "stage_finances",
+          "visible": true,
+          "company": "Finances Publiques",
+          "position": "Stage Ouvrier",
+          "location": "Lyon, France",
+          "date": "Juillet 2023",
+          "summary": "<p>Traitement, tri et ventilation du courrier entrant.</p><p>Rapprochement et vérification des chèques avec les titres de paiement (factures, bordereaux).</p><p>Classement et gestion physique des archives (archivage, consultation, destruction).</p>",
+          "url": {
+            "label": "Finances Publiques",
+            "href": ""
+          }
+        },
+        {
+          "id": "travail_etudiant",
+          "visible": true,
+          "company": "Travail Étudiant",
+          "position": "Différents postes",
+          "location": "Lyon, Ernée, Saint Pierre des Landes",
+          "date": "2021 - 2025",
+          "summary": "<p>Août 2025 : Adaptation d'un outil numérique des finances publiques (Lyon)</p><p>Août 2023 : Employé de Rayon Fruits et Légumes (Ernée)</p><p>Juillet 2022 : Opérateur de production (Saint Pierre des Landes)</p><p>Juin 2022 et juillet 2021 : Auxiliaire de Bureau (Lyon)</p>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ]
+    },
+    "volunteer": {
+      "name": "Volunteering",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "volunteer",
+      "items": []
+    },
+    "interests": {
+      "name": "Interests",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "interests",
+      "items": [
+        {
+          "id": "associations_tristan",
+          "visible": true,
+          "name": "Associations",
+          "keywords": [
+            "Ex-Secrétaire du club d'Échecs de CPE",
+            "Ex-Président des internes Chartreux Saint-Irénée"
+          ]
+        },
+        {
+          "id": "sport_tristan",
+          "visible": true,
+          "name": "Sport",
+          "keywords": [
+            "Volley-Ball",
+            "Natation",
+            "Course",
+            "Vélo de route"
+          ]
+        },
+        {
+          "id": "centres_interet_tristan",
+          "visible": true,
+          "name": "Centres d'intérêt",
+          "keywords": [
+            "Jeux de société",
+            "Voyage"
+          ]
+        }
+      ]
+    },
+    "languages": {
+      "name": "Langues",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "languages",
+      "items": [
+        {
+          "id": "francais_tristan",
+          "visible": true,
+          "name": "Français",
+          "description": "Natif",
+          "level": 5
+        },
+        {
+          "id": "anglais_tristan",
+          "visible": true,
+          "name": "Anglais",
+          "description": "Niveau C1",
+          "level": 4
+        },
+        {
+          "id": "allemand_tristan",
+          "visible": true,
+          "name": "Allemand",
+          "description": "Notions",
+          "level": 1
+        },
+        {
+          "id": "chinois_tristan",
+          "visible": true,
+          "name": "Chinois",
+          "description": "Notions",
+          "level": 1
+        }
+      ]
+    },
+    "profiles": {
+      "name": "Profiles",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "profiles",
+      "items": [
+        {
+          "id": "odwj3zo0z184gv24i0ra0qhf",
+          "visible": true,
+          "network": "GitHub",
+          "username": "tristantelleb",
+          "icon": "github-logo",
+          "url": {
+            "label": "",
+            "href": "https://github.com/tristantelleb"
+          }
+        },
+        {
+          "id": "a5iahzx4ax4qyvhebmsu49e1",
+          "visible": true,
+          "network": "Linkedin",
+          "username": "tristan-bellet",
+          "icon": "linkedin-logo",
+          "url": {
+            "label": "",
+            "href": "https://www.linkedin.com/in/tristan-bellet-6978562a1/"
+          }
+        }
+      ]
+    },
+    "projects": {
+      "name": "Projects",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "projects",
+      "items": []
+    },
+    "publications": {
+      "name": "Publications",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "publications",
+      "items": []
+    },
+    "references": {
+      "name": "References",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": false,
+      "id": "references",
+      "items": [
+        {
+          "id": "oy8gcz9qxllxfo9kzuohxcpi",
+          "visible": true,
+          "name": "ANNO",
+          "description": "XXX - Professeur",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ]
+    },
+    "skills": {
+      "name": "Compétences",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "skills",
+      "items": [
+        {
+          "id": "langages_informatique",
+          "visible": true,
+          "name": "Langages Informatique",
+          "description": "",
+          "level": 0,
+          "keywords": [
+            "Python",
+            "PySpark",
+            "SQL",
+            "Power Apps",
+            "Power BI",
+            "Excel"
+          ]
+        },
+        {
+          "id": "data_skills",
+          "visible": true,
+          "name": "Compétences en Data",
+          "description": "",
+          "level": 0,
+          "keywords": [
+            "Data Mining",
+            "Machine Learning",
+            "Reinforcement Learning",
+            "Deep Learning",
+            "Intelligence Artificielle",
+            "Big Data",
+            "TensorFlow",
+            "Git"
+          ]
+        },
+        {
+          "id": "comportement",
+          "visible": true,
+          "name": "Comportement en équipe",
+          "description": "",
+          "level": 0,
+          "keywords": [
+            "Esprit d'équipe",
+            "Curiosité",
+            "Facilité à s'intégrer",
+            "Déterminé"
+          ]
+        }
+      ]
+    },
+    "custom": {}
+  },
+  "metadata": {
+    "template": "ditto",
+    "layout": [
+      [
+        [
+          "summary",
+          "experience",
+          "education",
+          "projects",
+          "volunteer",
+          "references"
+        ],
+        [
+          "profiles",
+          "skills",
+          "interests",
+          "certifications",
+          "awards",
+          "publications",
+          "languages"
+        ]
+      ]
+    ],
+    "css": {
+      "value": "* {\n\t/*outline: 1px solid #000;\n\toutline-offset: 4px;*/\n}\n.mb-2 {\n    color: var(--color-primary);\n    font-size: 1.2rem;\n    font-weight: 600;\n}\n.p-custom > img {\n    border-width: 10px;\n    border-color: var(--color-primary);\n}\n/* bioMérieux theme styling */\nh1, h2, h3 {\n    color: #00427f;\n}\n.section-title {\n    background: linear-gradient(90deg, #cddb2e 0%, #00427f 100%);\n    background-clip: text;\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n.highlight {\n    background-color: rgba(205, 219, 46, 0.1);\n    padding: 2px 4px;\n    border-radius: 3px;\n}",
+      "visible": true
+    },
+    "page": {
+      "margin": 10,
+      "format": "a4",
+      "options": {
+        "breakLine": false,
+        "pageNumbers": false
       }
     },
-    "sections": {
-      "summary": {
-        "name": "",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": true,
-        "id": "summary",
-        "content": "<p>Ingénieur diplômé de CPE Lyon en Informatique et Réseaux de Communication, spécialisé en Réseaux et DevOps. J’ai développé une solide expertise technique en développement logiciel puis en DevOps lors de mes 5 années d’alternance chez Orange, avant d’intégrer Thales Services en tant qu’intégrateur applicatif DevSecOps et SRE sur une mission chez EDF.</p>"
-      },
-      "awards": {
-        "name": "Awards",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": true,
-        "id": "awards",
-        "items": []
-      },
-      "certifications": {
-        "name": "Cértifications",
-        "columns": 1,
-        "separateLinks": false,
-        "visible": true,
-        "id": "certifications",
-        "items": [
-          {
-            "id": "ah9dbl7c0nyvw14qwilipyaw",
-            "visible": false,
-            "name": "AWS Certifications",
-            "issuer": "Amazon Web Services",
-            "date": "A venir (courant 2025)",
-            "summary": "<p>Certification Cloud AWS </p>",
-            "url": {
-              "label": "AWS Amazon",
-              "href": "https://aws.amazon.com/"
-            }
-          },
-          {
-            "id": "qmfvai2pv78973en18i56ft4",
-            "visible": true,
-            "name": "Cambridge CAE",
-            "issuer": "Cambridge University Press & Assessment",
-            "date": "Décembre 2022",
-            "summary": "<p>Certification B2 Anglais</p>",
-            "url": {
-              "label": "Cambridge English",
-              "href": "https://www.cambridgeenglish.org/"
-            }
-          },
-          {
-            "id": "b3d7ywvk27wqw3rn2sf91exm",
-            "visible": false,
-            "name": "Test of English for International Communication",
-            "issuer": "ETS EMEA",
-            "date": "Fev 2020 - Fev 2022",
-            "summary": "<p>795/990</p>",
-            "url": {
-              "label": "ETS Global",
-              "href": "https://www.etsglobal.org/fr/fr"
-            }
-          },
-          {
-            "id": "fqw5f1ejve7pppez5slxjruj",
-            "visible": true,
-            "name": "Cisco Certified Network Associate Security (CCNA)",
-            "issuer": "Cisco NetAcad",
-            "date": "Juin 2019",
-            "summary": "<p>Certification Réseau</p>",
-            "url": {
-              "label": "NetAcad",
-              "href": "https://www.netacad.com/fr/courses/ccna-switching-routing-wireless-essentials?courseLang=en-US"
-            }
-          }
-        ]
-      },
-      "education": {
-        "name": "Diplômes et Formations",
-        "columns": 1,
-        "separateLinks": false,
-        "visible": true,
-        "id": "education",
-        "items": [
-          {
-            "id": "cwe6a0b77m665tt65eq7cy47",
-            "visible": true,
-            "institution": "CPE Lyon",
-            "studyType": "Diplôme d'Ingénieur",
-            "area": "Informatique et Réseaux de Communication",
-            "score": "",
-            "date": "2020 - 2023",
-            "summary": "<p><strong>Majeur Infrastructure et Sécurité des Réseaux et des Objets Communicants</strong></p><p>Réseaux &amp; Cloud: Architectures cloud (AWS, Azure), virtualisation, sécurité réseaux.</p><p>DevOps &amp; Conteneurisation: Docker, Kubernetes, automatisation CI/CD (GitLab).</p><p>Sécurité &amp; IoT: Sécurité avancée, objets connectés, traitement numérique du signal.</p><p>Développement: Programmation orientée objet (C, Java, Python), Web dynamique.</p>",
-            "url": {
-              "label": "CPE IRC",
-              "href": "https://www.cpe.fr/formation-numerique/ingenieur-informatique-reseaux/"
-            }
-          },
-          {
-            "id": "k7qsf9hff6xe3xgrd51jwvwn",
-            "visible": true,
-            "institution": "IUT Annecy",
-            "studyType": "DUT ",
-            "area": "Réseaux Informatiques et Telecomunications (Alternance)",
-            "score": "",
-            "date": "2018 - 2020",
-            "summary": "<p>Administration réseaux et systèmes (Linux, Windows Server, Active Directory).</p><p>Mise en place et sécurisation d’infrastructures réseau (DHCP, DNS, Virtualisation).</p><p>Télécommunications : installation serveurs téléphoniques, analyse xDSL/fibre.</p><p>Développement web (HTML/CSS/PHP/JS), programmation orientée objet (Python), scripting Unix et PowerShell.</p>",
-            "url": {
-              "label": "UNIV IUT R&T",
-              "href": "https://www.univ-smb.fr/iut-annecy/formation/reseaux-informatiques-et-telecoms/"
-            }
-          }
-        ]
-      },
-      "experience": {
-        "name": "Expérience Professionnelle",
-        "columns": 1,
-        "separateLinks": false,
-        "visible": true,
-        "id": "experience",
-        "items": [
-          {
-            "id": "sih434v1tdyimdsf0g4clqt8",
-            "visible": true,
-            "company": "Thales Services (Mission EDF – DPNT/DivNum)",
-            "position": "Intégrateur Applicatif DevSecOps SRE",
-            "location": "Lyon",
-            "date": "Sept 2023 - Maintenant",
-            "summary": "<p>Conception et gestion des pipelines CI/CD sous Jenkins avec automatisation complète (build, tests, déploiement idempotent), analyses de qualité et sécurité (SonarQube, Checkmarx), et implémentation de Quality &amp; Security Gates sur des projets GitFlow et OneFlow.</p><p>Orchestration des déploiements applicatifs sur environnements (recette, production).</p><p>Maintien en conditions opérationnelles (MCO), suivi proactif des environnements, résolution d’incidents et gestion des anomalies complexes.</p><p>Connaissance approfondie des normes, procédures et architectures propres à EDF.</p>",
-            "url": {
-              "label": "Thales Services Numérique",
-              "href": "https://www.thalesgroup.com/fr/marches/defense-et-securite/activites-services-numeriques"
-            }
-          },
-          {
-            "id": "a6eq2v3spr8fc53p88zwija6",
-            "visible": true,
-            "company": "Orange",
-            "position": "Développeur puis Ingénieur DevOps (Alternance)",
-            "location": "Lyon",
-            "date": "2018 - 2023",
-            "summary": "<p>Industrialisation et maintenance d’applications critiques (Python, API, Docker).</p><p>Mise en place de pipelines CI/CD (GitLab CI, SonarQube, Ansible).</p><p>Automatisation de processus techniques (gestion d’alarmes RTC).</p><p>Travail en équipe agile avec cycles de développement itératifs.</p>",
-            "url": {
-              "label": "Orange",
-              "href": "https://www.orange.com/fr"
-            }
-          }
-        ]
-      },
-      "volunteer": {
-        "name": "Volunteering",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": true,
-        "id": "volunteer",
-        "items": []
-      },
-      "interests": {
-        "name": "Interests",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": true,
-        "id": "interests",
-        "items": [
-          {
-            "id": "mrgkfsjofwijftib018vhupb",
-            "visible": true,
-            "name": "Sport",
-            "keywords": [
-              "Cyclisme",
-              "Course à pied",
-              "Basket ball"
-            ]
-          },
-          {
-            "id": "dsaie9s3lg0wjnwbnp94i6u4",
-            "visible": true,
-            "name": "Jeux de société",
-            "keywords": []
-          }
-        ]
-      },
-      "languages": {
-        "name": "Langues",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": true,
-        "id": "languages",
-        "items": [
-          {
-            "id": "ligo4mff77k57v1fq77cabns",
-            "visible": true,
-            "name": "Anglais",
-            "description": "Niveau C1",
-            "level": 4
-          },
-          {
-            "id": "a9njeoo8lvigoqpeddmvtq1a",
-            "visible": true,
-            "name": "Espagnol",
-            "description": "Niveau B1",
-            "level": 2
-          }
-        ]
-      },
-      "profiles": {
-        "name": "Profiles",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": true,
-        "id": "profiles",
-        "items": [
-          {
-            "id": "odwj3zo0z184gv24i0ra0qhf",
-            "visible": true,
-            "network": "GitHub",
-            "username": "tellebma",
-            "icon": "github-logo",
-            "url": {
-              "label": "",
-              "href": "https://github.com/tellebma"
-            }
-          },
-          {
-            "id": "a5iahzx4ax4qyvhebmsu49e1",
-            "visible": true,
-            "network": "Linkedin",
-            "username": "maxime-bellet",
-            "icon": "linkedin-logo",
-            "url": {
-              "label": "",
-              "href": "https://www.linkedin.com/in/maxime-bellet/"
-            }
-          }
-        ]
-      },
-      "projects": {
-        "name": "Projects",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": true,
-        "id": "projects",
-        "items": []
-      },
-      "publications": {
-        "name": "Publications",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": true,
-        "id": "publications",
-        "items": []
-      },
-      "references": {
-        "name": "References",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": false,
-        "id": "references",
-        "items": [
-          {
-            "id": "oy8gcz9qxllxfo9kzuohxcpi",
-            "visible": true,
-            "name": "ANNO",
-            "description": "EDF - Pilote de Produit ",
-            "summary": "",
-            "url": {
-              "label": "",
-              "href": ""
-            }
-          },
-          {
-            "id": "jguvi02stthk326df70x032o",
-            "visible": false,
-            "name": "ANNO 2",
-            "description": "EDF - Intégrateur Application Référent",
-            "summary": "",
-            "url": {
-              "label": "",
-              "href": ""
-            }
-          },
-          {
-            "id": "z598pn8n7elsgjh16odrki9m",
-            "visible": false,
-            "name": "ANNO 3",
-            "description": "Thales - Program Manager",
-            "summary": "",
-            "url": {
-              "label": "",
-              "href": ""
-            }
-          }
-        ]
-      },
-      "skills": {
-        "name": "Compétences",
-        "columns": 1,
-        "separateLinks": true,
-        "visible": true,
-        "id": "skills",
-        "items": [
-          {
-            "id": "gvqbl3yzprx3k9rzlh8h0nle",
-            "visible": true,
-            "name": "Outils CI/CD",
-            "description": "",
-            "level": 0,
-            "keywords": [
-              "Jenkins",
-              "Gitlab CI",
-              "Ansible"
-            ]
-          },
-          {
-            "id": "fxak44s71rjsa54nmygxol9f",
-            "visible": true,
-            "name": "Cloud & Virtualisation",
-            "description": "",
-            "level": 0,
-            "keywords": [
-              "AWS",
-              "GCP",
-              "Azure",
-              "Virtualisation (VMware)"
-            ]
-          },
-          {
-            "id": "go917u823nhvwh3wbtcl7tgk",
-            "visible": true,
-            "name": "Environnements OS",
-            "description": "",
-            "level": 0,
-            "keywords": [
-              "Linux/Unix",
-              "Windows Server"
-            ]
-          },
-          {
-            "id": "zdciyz20bqd6dec41vp933sj",
-            "visible": true,
-            "name": "Développement",
-            "description": "",
-            "level": 0,
-            "keywords": [
-              "Python",
-              "Java",
-              "C",
-              "PHP",
-              "SQL",
-              "Shell scripting"
-            ]
-          }
-        ]
-      },
-      "custom": {}
+    "theme": {
+      "background": "#ffffff",
+      "text": "#00427f",
+      "primary": "#cddb2e"
     },
-    "metadata": {
-      "template": "ditto",
-      "layout": [
-        [
-          [
-            "summary",
-            "experience",
-            "education",
-            "projects",
-            "volunteer",
-            "references"
-          ],
-          [
-            "profiles",
-            "skills",
-            "interests",
-            "certifications",
-            "awards",
-            "publications",
-            "languages"
-          ]
-        ]
-      ],
-      "css": {
-        "value": "* {\n\t/*outline: 1px solid #000;\n\toutline-offset: 4px;*/\n}\n.mb-2 {\n    color: var(--color-primary);\n    font-size: 1.2rem;\n}\n.p-custom > img {\n    border-width: 10px;\n    border-color: var(--color-primary);\n}",
-        "visible": true
+    "typography": {
+      "font": {
+        "family": "Asap",
+        "subset": "latin",
+        "variants": [
+          "regular"
+        ],
+        "size": 13.3
       },
-      "page": {
-        "margin": 10,
-        "format": "a4",
-        "options": {
-          "breakLine": false,
-          "pageNumbers": false
-        }
-      },
-      "theme": {
-        "background": "#ffffff",
-        "text": "#000000",
-        "primary": "#0284c7"
-      },
-      "typography": {
-        "font": {
-          "family": "Asap",
-          "subset": "latin",
-          "variants": [
-            "regular"
-          ],
-          "size": 13.3
-        },
-        "lineHeight": 1.35,
-        "hideIcons": false,
-        "underlineLinks": true
-      },
-      "notes": ""
-    }
+      "lineHeight": 1.35,
+      "hideIcons": false,
+      "underlineLinks": true
+    },
+    "notes": ""
   }
+}

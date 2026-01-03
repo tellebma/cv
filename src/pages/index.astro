@@ -176,7 +176,7 @@ const isVisible = (section) => section?.visible !== false;
           {cv.sections.education.items.filter(e => e.visible).map(edu => (
             <div class="mb-2">
               <h3 class="text-l font-semibold">{edu.institution}</h3>
-              <p class="text-sm text-gray-500"><em>{edu.studyType} — {edu.area} ({edu.date})</em></p>
+              <p class="text-sm text-gray-500"><em>{edu.area} ({edu.date})</em></p>
               <div class="text-sm mt-2 ml-2" set:html={edu.summary}></div>
             </div>
           ))}
