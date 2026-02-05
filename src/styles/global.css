@@ -47,6 +47,7 @@
 
 /* Variables globales pour dark mode */
 @layer base {
+  html.dark body,
   body.dark {
     --color-background: #0a1e2c; /* Bleu nuit pour le fond en dark mode */
     --color-text: #e5e7eb;       /* Gris clair pour le texte */
@@ -84,25 +85,87 @@ button:hover, .button:hover {
     padding: 10px;
 }
 
-.ph {
+.ph, [class*="ph-"] {
     color: var(--color-primary);
     margin-right: 2px;
+    /* Fallback: ensure icons have minimum size even if font fails to load */
+    display: inline-block;
+    min-width: 1em;
+    min-height: 1em;
 }
 
 @media print {
-    body {
-      background: white;
+    /* Reset colors to light mode for print */
+    :root {
+      --color-background: #ffffff !important;
+      --color-text: #0a1e2c !important;
+      --color-primary: #0055A4 !important;
+      --color-link: #0055A4 !important;
+    }
+
+    html, body {
+      background: white !important;
+      color: #0a1e2c !important;
       margin: 0;
       padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
-    header, main {
-      
-      background: white;
+
+    /* Override dark mode for print */
+    html.dark body,
+    body.dark {
+      --color-background: #ffffff !important;
+      --color-text: #0a1e2c !important;
+      --color-primary: #0055A4 !important;
+      --color-link: #0055A4 !important;
+      background: white !important;
+      color: #0a1e2c !important;
     }
+
+    header, main, aside {
+      background: white !important;
+    }
+
+    /* Hide non-printable elements */
     footer {
       display: none !important;
     }
+
+    /* Remove visual decorations */
     #cvPage {
       box-shadow: none !important;
+      border-radius: 0 !important;
+      max-width: 100% !important;
+    }
+
+    /* Ensure links are visible but not distracting */
+    a {
+      color: var(--color-primary) !important;
+      text-decoration: none !important;
+    }
+
+    /* Page break control */
+    .section {
+      page-break-inside: avoid;
+    }
+
+    h2, h3 {
+      page-break-after: avoid;
+    }
+
+    /* Ensure profile image is visible in print */
+    header img {
+      display: block !important;
+    }
+
+    /* Adjust grid for print */
+    main {
+      display: block !important;
+    }
+
+    aside, .main {
+      width: 100% !important;
+      max-width: 100% !important;
     }
 }
