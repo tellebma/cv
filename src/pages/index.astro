@@ -10,10 +10,12 @@ type SectionValue = Sections[SectionKey];
 
 const isVisible = (section: SectionValue | undefined): boolean => section?.visible !== false;
 
-// Analytics configuration (optional)
-const matomoUrl = import.meta.env.PUBLIC_MATOMO_URL || '';
-const matomoSiteId = import.meta.env.PUBLIC_MATOMO_SITE_ID || '';
-const analyticsEnabled = matomoUrl && matomoSiteId;
+// Analytics configuration. Defaults preserve the production Matomo tracker
+// (cv.tellebma.fr) when env vars aren't provided by the build environment.
+// Override or disable via PUBLIC_MATOMO_URL="" to opt out.
+const matomoUrl = import.meta.env.PUBLIC_MATOMO_URL ?? '//analytics.tellebma.fr/';
+const matomoSiteId = import.meta.env.PUBLIC_MATOMO_SITE_ID ?? '1';
+const analyticsEnabled = Boolean(matomoUrl) && Boolean(matomoSiteId);
 ---
 
 <head>
