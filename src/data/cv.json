@@ -36,7 +36,7 @@
         "separateLinks": true,
         "visible": true,
         "id": "summary",
-        "content": "<p>Ingénieur diplômé de CPE Lyon en Informatique et Réseaux de Communication, spécialisé en Réseaux et DevOps. J’ai développé une solide expertise technique en développement logiciel puis en DevOps lors de mes 5 années d’alternance chez Orange, avant d’intégrer Thales Services en tant qu’intégrateur applicatif DevSecOps et SRE sur une mission chez EDF.</p>"
+        "content": "<p>Ingénieur diplômé de CPE Lyon en Informatique et Réseaux de Communication, spécialisé en Réseaux et DevOps. J’ai développé une solide expertise technique en développement logiciel puis en DevOps lors de mes 5 années d’alternance chez Orange, avant d’intégrer Thales Services en tant qu’intégrateur applicatif DevSecOps et SRE, d’abord sur une mission chez EDF puis à l’ANS sur le SI-SAMU.</p>"
       },
       "awards": {
         "name": "Awards",
@@ -148,12 +148,25 @@
         "id": "experience",
         "items": [
           {
+            "id": "k2xp4m9nf3t8w1cr5q7jvu6y",
+            "visible": true,
+            "company": "Thales Services (Mission ANS – SI-SAMU)",
+            "position": "Intégrateur Applicatif DevSecOps SRE",
+            "location": "Lyon",
+            "date": "Avril 2026 - Maintenant",
+            "summary": "<p>Intervention sur le SI-SAMU pour l’Agence du Numérique en Santé (ANS).</p><p>Gestion du run critique sur un environnement comportant des centaines de serveurs différents.</p>",
+            "url": {
+              "label": "Thales Services Numérique",
+              "href": "https://www.thalesgroup.com/fr/marches/defense-et-securite/activites-services-numeriques"
+            }
+          },
+          {
             "id": "sih434v1tdyimdsf0g4clqt8",
             "visible": true,
             "company": "Thales Services (Mission EDF – DPNT/DivNum)",
             "position": "Intégrateur Applicatif DevSecOps SRE",
             "location": "Lyon",
-            "date": "Sept 2023 - Maintenant",
+            "date": "Sept 2023 - Avril 2026",
             "summary": "<p>Conception et gestion des pipelines CI/CD sous Jenkins avec automatisation complète (build, tests, déploiement idempotent), analyses de qualité et sécurité (SonarQube, Checkmarx), et implémentation de Quality &amp; Security Gates sur des projets GitFlow et OneFlow.</p><p>Orchestration des déploiements applicatifs sur environnements (recette, production).</p><p>Maintien en conditions opérationnelles (MCO), suivi proactif des environnements, résolution d’incidents et gestion des anomalies complexes.</p><p>Connaissance approfondie des normes, procédures et architectures propres à EDF.</p>",
             "url": {
               "label": "Thales Services Numérique",
