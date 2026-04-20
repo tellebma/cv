@@ -1,8 +1,21 @@
 ---
-import cv from '../data/cv.json';
+import type { CV, SummarySection, Sections } from '../types/cv';
+import cvData from '../data/cv.json';
 import '../styles/global.css';
 
-const isVisible = (section) => section?.visible !== false;
+const cv = cvData as CV;
+
+type SectionKey = keyof Sections;
+type SectionValue = Sections[SectionKey];
+
+const isVisible = (section: SectionValue | undefined): boolean => section?.visible !== false;
+
+// Analytics configuration. Defaults preserve the production Matomo tracker
+// (cv.tellebma.fr) when env vars aren't provided by the build environment.
+// Override or disable via PUBLIC_MATOMO_URL="" to opt out.
+const matomoUrl = import.meta.env.PUBLIC_MATOMO_URL ?? '//analytics.tellebma.fr/';
+const matomoSiteId = import.meta.env.PUBLIC_MATOMO_SITE_ID ?? '1';
+const analyticsEnabled = Boolean(matomoUrl) && Boolean(matomoSiteId);
 ---
 
 <head>
@@ -10,21 +23,51 @@ const isVisible = (section) => section?.visible !== false;
   <title>{cv.basics.name} - {cv.basics.headline}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <script src="https://unpkg.com/phosphor-icons"></script>
-  <!-- Matomo -->
-  <script  is:inline>
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
+  <!-- Phosphor Icons (locally installed for reliability) -->
+  <script>
+    import 'phosphor-icons';
+  </script>
+  <!-- Theme initialization (before page render to avoid flash) -->
+  <script is:inline>
     (function() {
-      var u="//analytics.tellebma.fr/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+          document.documentElement.classList.toggle('dark', e.matches);
+          document.body.classList.toggle('dark', e.matches);
+        }
+      });
     })();
   </script>
+  <!-- Matomo Analytics (conditionally loaded) -->
+  {analyticsEnabled && (
+    <script
+      id="matomo-config"
+      data-url={matomoUrl}
+      data-site-id={matomoSiteId}
+      is:inline
+    >
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var config = document.getElementById('matomo-config');
+        var u = config.dataset.url;
+        var siteId = config.dataset.siteId;
+        if (!u || !siteId) return;
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', siteId]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  )}
 </head>
 
 <div id="cvPage" class="max-w-[794px] mx-auto rounded-b-lg shadow overflow-hidden">
@@ -193,9 +236,25 @@ const isVisible = (section) => section?.visible !== false;
     </div>
     <div class="flex flex-col sm:flex-row gap-3">
       <button
+        id="theme-toggle"
         class="bg-white text-black dark:bg-gray-700 dark:text-white py-2 px-4 rounded-full shadow hover:bg-gray-200 dark:hover:bg-gray-600 transition"
-        onclick="document.body.classList.toggle('dark')"
-      >🌗 Mode</button>
+        aria-label="Toggle dark mode"
+      >
+        <span id="theme-icon">🌗</span> Mode
+      </button>
+      <script is:inline>
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+          const isDark = document.documentElement.classList.toggle('dark');
+          document.body.classList.toggle('dark', isDark);
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          document.getElementById('theme-icon').textContent = isDark ? '🌙' : '☀️';
+        });
+        // Set initial icon
+        (function() {
+          const isDark = document.documentElement.classList.contains('dark');
+          document.getElementById('theme-icon').textContent = isDark ? '🌙' : '☀️';
+        })();
+      </script>
       <a
         href="./cv.pdf"
         target="_blank"
