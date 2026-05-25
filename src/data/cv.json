@@ -36,7 +36,7 @@
         "separateLinks": true,
         "visible": true,
         "id": "summary",
-        "content": "<p>Ingénieur diplômé de CPE Lyon en Informatique et Réseaux de Communication, spécialisé en Réseaux et DevOps. J’ai développé une solide expertise technique en développement logiciel puis en DevOps lors de mes 5 années d’alternance chez Orange, avant d’intégrer Thales Services en tant qu’intégrateur applicatif DevSecOps et SRE, d’abord sur une mission chez EDF puis à l’ANS sur le SI-SAMU.</p>"
+        "content": "<p>Ingénieur diplômé de CPE Lyon en Informatique et Réseaux de Communication, spécialisé en Réseaux et DevOps. J’ai acquis une solide expertise en développement logiciel puis en DevOps au cours de 5 années d’alternance chez Orange. J’ai ensuite rejoint Thales Services comme intégrateur applicatif DevSecOps et SRE, avec des missions successives chez EDF (DivNum) puis à l’ANS sur le SI-SAMU.</p>"
       },
       "awards": {
         "name": "Awards",
@@ -118,7 +118,7 @@
             "area": "Informatique et Réseaux de Communication",
             "score": "",
             "date": "2020 - 2023",
-            "summary": "<p><strong>Majeur Infrastructure et Sécurité des Réseaux et des Objets Communicants</strong></p><p>Réseaux &amp; Cloud: Architectures cloud (AWS, Azure), virtualisation, sécurité réseaux.</p><p>DevOps &amp; Conteneurisation: Docker, Kubernetes, automatisation CI/CD (GitLab).</p><p>Sécurité &amp; IoT: Sécurité avancée, objets connectés, traitement numérique du signal.</p><p>Développement: Programmation orientée objet (C, Java, Python), Web dynamique.</p>",
+            "summary": "<p><strong>Majeur Infrastructure et Sécurité des Réseaux et des Objets Communicants</strong></p><p>Cloud (AWS, Azure), virtualisation, DevOps & conteneurisation (Docker, K8s, CI/CD GitLab).</p><p>Sécurité avancée, IoT, traitement du signal. Dev (C, Java, Python, Web).</p>",
             "url": {
               "label": "CPE IRC",
               "href": "https://www.cpe.fr/formation-numerique/ingenieur-informatique-reseaux/"
@@ -132,7 +132,7 @@
             "area": "Réseaux Informatiques et Telecomunications (Alternance)",
             "score": "",
             "date": "2018 - 2020",
-            "summary": "<p>Administration réseaux et systèmes (Linux, Windows Server, Active Directory).</p><p>Mise en place et sécurisation d’infrastructures réseau (DHCP, DNS, Virtualisation).</p><p>Télécommunications : installation serveurs téléphoniques, analyse xDSL/fibre.</p><p>Développement web (HTML/CSS/PHP/JS), programmation orientée objet (Python), scripting Unix et PowerShell.</p>",
+            "summary": "<p>Administration réseaux et systèmes (Linux, Windows Server, AD), sécurisation d’infrastructures (DHCP, DNS, virtualisation).</p><p>Télécommunications (xDSL/fibre, serveurs téléphoniques). Dev web, Python, scripting Unix/PowerShell.</p>",
             "url": {
               "label": "UNIV IUT R&T",
               "href": "https://www.univ-smb.fr/iut-annecy/formation/reseaux-informatiques-et-telecoms/"
@@ -154,7 +154,7 @@
             "position": "Intégrateur Applicatif DevSecOps SRE",
             "location": "Lyon",
             "date": "Avril 2026 - Maintenant",
-            "summary": "<p>Intervention sur le SI-SAMU pour l’Agence du Numérique en Santé (ANS).</p><p>Gestion du run critique sur un environnement comportant des centaines de serveurs différents.</p>",
+            "summary": "<p>Intervention sur le SI-SAMU pour l’Agence du Numérique en Santé (ANS).</p><p>Run et MCO d’un SI critique en environnement SecNumCloud, sous exigences fortes de disponibilité et sécurité.</p><p>Traitement des incidents, supervision et fiabilisation des opérations d’exploitation.</p><p>Contribution à l’industrialisation de la chaîne de delivery et aux pratiques DevSecOps.</p>",
             "url": {
               "label": "Thales Services Numérique",
               "href": "https://www.thalesgroup.com/fr/marches/defense-et-securite/activites-services-numeriques"
@@ -167,7 +167,7 @@
             "position": "Intégrateur Applicatif DevSecOps SRE",
             "location": "Lyon",
             "date": "Sept 2023 - Avril 2026",
-            "summary": "<p>Conception et gestion des pipelines CI/CD sous Jenkins avec automatisation complète (build, tests, déploiement idempotent), analyses de qualité et sécurité (SonarQube, Checkmarx), et implémentation de Quality &amp; Security Gates sur des projets GitFlow et OneFlow.</p><p>Orchestration des déploiements applicatifs sur environnements (recette, production).</p><p>Maintien en conditions opérationnelles (MCO), suivi proactif des environnements, résolution d’incidents et gestion des anomalies complexes.</p><p>Connaissance approfondie des normes, procédures et architectures propres à EDF.</p>",
+            "summary": "<p>Pipelines CI/CD Jenkins (build, tests, déploiement idempotent), analyses qualité/sécurité (SonarQube, Checkmarx) et Quality & Security Gates sur projets GitFlow/OneFlow.</p><p>Orchestration des déploiements (recette, production) et MCO : suivi proactif, résolution d’incidents et anomalies complexes. Connaissance approfondie des normes, procédures et architectures EDF.</p>",
             "url": {
               "label": "Thales Services Numérique",
               "href": "https://www.thalesgroup.com/fr/marches/defense-et-securite/activites-services-numeriques"
