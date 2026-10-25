@@ -3,3 +3,15 @@ ignore:
     - "*":
         reason: "False positive — transitive bundle from tailwindcss oxide"
         expires: "2028-01-01T00:00:00Z"
+  SNYK-JS-HTTPCACHESEMANTICS-19964064:
+    - "*":
+        reason: "Dependance de build Astro uniquement, non livree dans l'image nginx ; aucun correctif publie (Snyk : no upgrade or patch available)"
+        expires: "2027-01-25T00:00:00Z"
+  SNYK-JS-HTTPCACHESEMANTICS-19964068:
+    - "*":
+        reason: "Dependance de build Astro uniquement, non livree dans l'image nginx ; aucun correctif publie (Snyk : no upgrade or patch available)"
+        expires: "2027-01-25T00:00:00Z"
+  SNYK-JS-PICOMATCH-21248802:
+    - "*":
+        reason: "Dependance de build Astro uniquement, non livree dans l'image nginx ; aucun correctif publie (Snyk : no upgrade or patch available)"
+        expires: "2027-01-25T00:00:00Z"
